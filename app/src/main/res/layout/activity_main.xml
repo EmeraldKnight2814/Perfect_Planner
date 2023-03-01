@@ -40,4 +40,12 @@
         android:text="THIS WILL BE WHERE THE STUFF IS SHOWN"
         tools:layout_editor_absoluteX="65dp"
         tools:layout_editor_absoluteY="272dp" />
+
+    <CheckBox
+        android:id="@+id/CompletedCB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CheckBox"
+        tools:layout_editor_absoluteX="253dp"
+        tools:layout_editor_absoluteY="293dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
