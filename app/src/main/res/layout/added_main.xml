@@ -5,9 +5,10 @@
     android:layout_height="match_parent">
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/SaveBTN"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:onClick="ChangeActivities"
         android:text="Button"
         tools:layout_editor_absoluteX="36dp"
         tools:layout_editor_absoluteY="492dp" />
