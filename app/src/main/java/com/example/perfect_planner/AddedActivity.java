@@ -2,6 +2,7 @@ package com.example.perfect_planner;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -14,7 +15,13 @@ public class AddedActivity extends AppCompatActivity {
     }
 
     public class addActivity {
+        public void createAssignment (View v){
+            EditText assignName = findViewById(R.id.nameET);
+            EditText catClass = findViewById(R.id.categoryET);
+            EditText dueDate = findViewById(R.id.dueDateET);
 
+
+        }
     }
 
 }
