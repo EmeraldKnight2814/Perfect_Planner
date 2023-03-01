@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Perfect_Planner</string>
+    <string-array name="filters">
+        <item>Science</item>
+        <item>Math</item>
+        <item>History</item>
+        <item>Literature</item>
+        <item>SocialStudies</item>
+    </string-array>
 </resources>
