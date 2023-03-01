@@ -11,4 +11,40 @@
         android:text="Button"
         tools:layout_editor_absoluteX="36dp"
         tools:layout_editor_absoluteY="492dp" />
+
+    <EditText
+        android:id="@+id/nameET"
+        android:layout_width="300dp"
+        android:layout_height="70dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:text="Name"
+        android:textSize="20sp"
+        tools:layout_editor_absoluteX="55dp"
+        tools:layout_editor_absoluteY="72dp" />
+
+    <EditText
+        android:id="@+id/categoryET"
+        android:layout_width="300dp"
+        android:layout_height="70dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:text="Name"
+        android:textSize="20sp"
+        tools:layout_editor_absoluteX="56dp"
+        tools:layout_editor_absoluteY="153dp" />
+
+    <EditText
+        android:id="@+id/dueDateET"
+        android:layout_width="300dp"
+        android:layout_height="70dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:text="Name"
+        android:textSize="20sp"
+        tools:layout_editor_absoluteX="56dp"
+        tools:layout_editor_absoluteY="234dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -10,5 +10,5 @@ public class AddedActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.added_main);
     }
-    
+
 }
