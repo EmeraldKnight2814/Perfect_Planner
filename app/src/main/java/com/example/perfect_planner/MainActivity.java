@@ -25,6 +25,6 @@ public class MainActivity extends AppCompatActivity {
 
     public void addPleaseButton (View v){
         Intent intent = new Intent(this, AddedActivity.class);
-        mAddNewAssignment.launch(intent);
+        startActivity(intent);
     }
 }
