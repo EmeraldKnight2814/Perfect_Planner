@@ -6,25 +6,77 @@
     android:layout_height="match_parent">
 
     <Button
-        android:id="@+id/ClearBTN"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="492dp"
-        android:text="Button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/SaveBTN"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:id="@+id/saveBTN"
+        android:layout_width="120dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginBottom="290dp"
+        android:text="Save"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/cancelBTN"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dueDateET" />
 
-    <Button
-        android:id="@+id/SaveBTN"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="492dp"
-        android:onClick="ChangeActivities"
-        android:text="Button"
-        app:layout_constraintEnd_toStartOf="@+id/ClearBTN"
+    <EditText
+        android:id="@+id/nameET"
+        android:layout_width="300dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="106dp"
+        android:ems="10"
+        android:hint="Assignment Name"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/categoryET"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/categoryET"
+        android:layout_width="300dp"
+        android:layout_height="70dp"
+        android:ems="10"
+        android:hint="Category/Class"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/dueDateET"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nameET" />
+
+    <EditText
+        android:id="@+id/dueDateET"
+        android:layout_width="300dp"
+        android:layout_height="70dp"
+        android:layout_marginBottom="70dp"
+        android:ems="10"
+        android:hint="Due Date"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/saveBTN"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/categoryET" />
+
+    <Button
+        android:id="@+id/cancelBTN"
+        android:layout_width="120dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="96dp"
+        android:layout_marginEnd="55dp"
+        android:layout_marginBottom="294dp"
+        android:text="Cancel"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/saveBTN"
+        app:layout_constraintTop_toBottomOf="@+id/dueDateET" />
 </androidx.constraintlayout.widget.ConstraintLayout>
