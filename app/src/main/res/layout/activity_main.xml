@@ -11,14 +11,15 @@
     <Spinner
         android:id="@+id/filter"
         android:layout_width="133dp"
-        android:layout_height="36dp"
+        android:layout_height="48dp"
         android:layout_marginStart="50dp"
         android:layout_marginTop="100dp"
         android:layout_marginEnd="50dp"
         android:contentDescription="Filter"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/add"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="DuplicateSpeakableTextCheck" />
 
     <Button
         android:id="@+id/add"
@@ -31,4 +32,12 @@
         app:layout_constraintEnd_toStartOf="@+id/filter"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/placeholder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="THIS WILL BE WHERE THE STUFF IS SHOWN"
+        tools:layout_editor_absoluteX="65dp"
+        tools:layout_editor_absoluteY="272dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
