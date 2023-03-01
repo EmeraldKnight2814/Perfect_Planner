@@ -18,6 +18,11 @@ public class AddedActivity extends AppCompatActivity {
             Intent i = new Intent(getApplicationContext(), MainActivity.class);
             startActivity(i);
         });
+        Button CancelBTN = findViewById(R.id.cancelBTN);
+        SaveBTN.setOnClickListener(view ->{
+            Intent i = new Intent(getApplicationContext(), MainActivity.class);
+            startActivity(i);
+        });
     }
 
     public class addActivity {
