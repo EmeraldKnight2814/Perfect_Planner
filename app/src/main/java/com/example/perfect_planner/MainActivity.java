@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void addPleaseButton (View v){
-        Intent intent = new Intent(this, AddedActivity.class);
+        Intent intent = new Intent(getApplicationContext(), AddedActivity.class);
         startActivity(intent);
     }
 }
