@@ -4,10 +4,10 @@ import java.util.ArrayList;
 
 public class Model {
     private static Model theModel = null;
-    private ArrayList<Task> taskList;
+    private ArrayList<Asgmt> asgmtList;
 
     private Model() {
-        taskList = new ArrayList<Task>();
+        asgmtList = new ArrayList<Asgmt>();
     }
 
     public static Model getModel() {
@@ -17,44 +17,35 @@ public class Model {
         return theModel;
     }
 
-    public ArrayList<Task> getTaskList() {
-        return taskList;
+    public ArrayList<Asgmt> getAsgmtList() {
+        return asgmtList;
     }
-
-    public void newPage(int position) {
-        //add a code to open a new activity layout
-    }
-
-    public static class Task {
-        private String assignment;
+    
+    public static class Asgmt {
+        private String asgmt;
         private int date;
 
-        public Task(String assignment, int date) {
-            this.assignment = assignment;
+        public Asgmt(String asgmt, int date) {
+            this.asgmt = asgmt;
             this.date = date;
         }
 
-        public String getName() {
-            return name;
+        public String getAsgmt() {
+            return asgmt;
         }
-        public void setName(String name) {
-            this.name = name;
+        public void setAsgmt(String asgmt) {
+            this.asgmt = asgmt;
         }
-        public int getCount() {
-            return count;
+        public int getDate() {
+            return date;
         }
-        public void setCount(int count) {
-            this.count = count;
+        public void setDate(int date) {
+            this.date = date;
         }
     }
 
     public void clear() {
-        taskList.clear();
+        asgmtList.clear();
     }
 
-    public void zeroCount() {
-        for (Task task : taskList) {
-            task.setCount(0);
-        }
-    }
 }
