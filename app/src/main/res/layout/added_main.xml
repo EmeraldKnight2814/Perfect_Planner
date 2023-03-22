@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="#FDB4E8"
     android:layout_height="match_parent">
 
     <Button
@@ -12,6 +13,8 @@
         android:layout_marginStart="56dp"
         android:layout_marginEnd="60dp"
         android:layout_marginBottom="290dp"
+        android:backgroundTint="#02A512"
+        android:fontFamily="@font/archivo_narrow_italic"
         android:text="Save"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -73,6 +76,8 @@
         android:layout_marginTop="78dp"
         android:layout_marginEnd="55dp"
         android:layout_marginBottom="294dp"
+        android:backgroundTint="#A50202"
+        android:fontFamily="@font/archivo_narrow_italic"
         android:text="Cancel"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
