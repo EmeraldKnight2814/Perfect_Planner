@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"
+    android:background="#FDB4E8"
     android:contentDescription="Filter"
     tools:context=".MainActivity">
 
@@ -28,6 +28,9 @@
         android:layout_marginStart="50dp"
         android:layout_marginTop="100dp"
         android:layout_marginEnd="50dp"
+        android:backgroundTint="#02A512"
+        android:fontFamily="@font/archivo_narrow_italic"
+        android:onClick="addPleaseButton"
         android:text="add please"
         app:layout_constraintEnd_toStartOf="@+id/filter"
         app:layout_constraintStart_toStartOf="parent"
