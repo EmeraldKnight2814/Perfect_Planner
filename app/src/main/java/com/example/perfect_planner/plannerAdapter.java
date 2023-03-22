@@ -17,7 +17,7 @@ public class plannerAdapter extends RecyclerView.Adapter<plannerAdapter.PlannerV
         PlannerViewHolder th= new PlannerViewHolder(v);
         return th;
     }
-
+    //private Model myModel = Model.getModel();
     @Override
     public void onBindViewHolder(@NonNull PlannerViewHolder holder, int position) {
         TextView assignTV = holder.itemView.findViewById(R.id.assignTV);
@@ -26,6 +26,7 @@ public class plannerAdapter extends RecyclerView.Adapter<plannerAdapter.PlannerV
 
     @Override
     public int getItemCount() {
+        //retrun myModel.
         return 0;
     }
 
