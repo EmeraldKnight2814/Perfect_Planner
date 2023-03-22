@@ -22,13 +22,13 @@ public class plannerAdapter extends RecyclerView.Adapter<plannerAdapter.PlannerV
     public void onBindViewHolder(@NonNull PlannerViewHolder holder, int position) {
         TextView assignTV = holder.itemView.findViewById(R.id.assignTV);
         TextView dueDateTV = holder.itemView.findViewById(R.id.dueDateTV);
-        //assignTV.setText(myModel.);
+        assignTV.setText(myModel.getAsgmtList().get(position).getAsgmt());
+
     }
 
     @Override
     public int getItemCount() {
-        //retrun myModel.
-        return 0;
+        return myModel.getAsgmtList().size();
     }
 
     public static class PlannerViewHolder extends RecyclerView.ViewHolder{
