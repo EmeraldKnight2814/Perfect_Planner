@@ -17,11 +17,12 @@ public class plannerAdapter extends RecyclerView.Adapter<plannerAdapter.PlannerV
         PlannerViewHolder th= new PlannerViewHolder(v);
         return th;
     }
-    //private Model myModel = Model.getModel();
+    private Model myModel = Model.getModel();
     @Override
     public void onBindViewHolder(@NonNull PlannerViewHolder holder, int position) {
         TextView assignTV = holder.itemView.findViewById(R.id.assignTV);
         TextView dueDateTV = holder.itemView.findViewById(R.id.dueDateTV);
+        //assignTV.setText(myModel.);
     }
 
     @Override
