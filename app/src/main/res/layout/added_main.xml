@@ -44,6 +44,7 @@
         android:layout_width="300dp"
         android:layout_height="70dp"
         android:contentDescription="Category/Class"
+        android:entries="@array/classFilter"
         android:minHeight="48dp"
         android:spinnerMode="dropdown"
         app:layout_constraintBottom_toTopOf="@+id/dueDateET"
