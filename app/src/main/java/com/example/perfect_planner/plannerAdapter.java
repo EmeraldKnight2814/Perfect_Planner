@@ -9,14 +9,23 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 public class plannerAdapter extends RecyclerView.Adapter<plannerAdapter.PlannerViewHolder> {
+
+    public static class PlannerViewHolder extends RecyclerView.ViewHolder{
+        public PlannerViewHolder(View v) {super(v);}
+    }
+
+    public PlannerAdapter(){
+        super();
+    }
+
     @NonNull
     @Override
     public PlannerViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.assigntemp, parent, false);
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.assigntemp, parent, false);
         PlannerViewHolder th= new PlannerViewHolder(v);
         return th;
     }
+
     private Model myModel = Model.getModel();
     @Override
     public void onBindViewHolder(@NonNull PlannerViewHolder holder, int position) {
@@ -31,10 +40,4 @@ public class plannerAdapter extends RecyclerView.Adapter<plannerAdapter.PlannerV
         return 0;
     }
 
-    public static class PlannerViewHolder extends RecyclerView.ViewHolder{
-
-        public PlannerViewHolder(@NonNull View itemView) {
-            super(itemView);
-        }
-    }
 }
