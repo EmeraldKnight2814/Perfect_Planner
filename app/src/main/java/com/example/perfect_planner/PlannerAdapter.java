@@ -21,7 +21,8 @@ public class PlannerAdapter extends RecyclerView.Adapter<PlannerAdapter.PlannerV
     @NonNull
     @Override
     public PlannerViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.assigntemp, parent, false);
+        View v = LayoutInflater.from(parent.getContext())
+                .inflate(R.layout.assigntemp, parent, false);
         PlannerViewHolder th= new PlannerViewHolder(v);
         return th;
     }
