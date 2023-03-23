@@ -38,15 +38,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
+    <Spinner
         android:id="@+id/categoryET"
         android:layout_width="300dp"
         android:layout_height="70dp"
-        android:ems="10"
-        android:hint="Category/Class"
-        android:inputType="textPersonName"
+        android:contentDescription="Category/Class"
         android:minHeight="48dp"
-        android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/dueDateET"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.504"
