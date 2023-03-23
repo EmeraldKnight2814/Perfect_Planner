@@ -8,7 +8,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class plannerAdapter extends RecyclerView.Adapter<plannerAdapter.PlannerViewHolder> {
+public class PlannerAdapter extends RecyclerView.Adapter<PlannerAdapter.PlannerViewHolder> {
 
     public static class PlannerViewHolder extends RecyclerView.ViewHolder{
         public PlannerViewHolder(View v) {super(v);}
