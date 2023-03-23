@@ -23,25 +23,29 @@ public class Model {
     
     public static class Asgmt {
         private String asgmt;
-        private int date;
+        private String cat;
+        private String date;
 
-        public Asgmt(String asgmt, int date) {
+        public Asgmt(String asgmt, String date, String cat) {
             this.asgmt = asgmt;
             this.date = date;
+            this.cat = cat;
         }
 
         public String getAsgmt() {
-            return asgmt;
+            return this.asgmt;
         }
         public void setAsgmt(String asgmt) {
             this.asgmt = asgmt;
         }
-        public int getDate() {
-            return date;
+        public String getDate() {
+            return this.date;
         }
-        public void setDate(int date) {
+        public void setDate(String date) {
             this.date = date;
         }
+        public String getCat(){ return this.cat; }
+        public void setCat(String cat){ this.cat = cat; }
     }
 
     public void clear() {

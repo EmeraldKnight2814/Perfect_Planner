@@ -9,6 +9,8 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.ArrayList;
+
 public class AddedActivity extends AppCompatActivity {
 
     @Override
@@ -27,7 +29,27 @@ public class AddedActivity extends AppCompatActivity {
         EditText catClass = findViewById(R.id.categoryET);
         EditText dueDate = findViewById(R.id.dueDateET);
 
+        Model.Asgmt asgmt = new Model.Asgmt(assignName.getText().toString(), dueDate.getText().toString(), catClass.getText().toString());
+        ArrayList<Model.Asgmt> list = Model.getModel().getAsgmtList();
 
+        boolean contained = false;
+        int indexC = 0;
+        for(int i = 0; i < list.size(); i++){
+            if(assignName.getText().toString() == list.get(i).getAsgmt()){
+                contained = true;
+                indexC = i;
+                break;
+            }
+        }
+        // If array list contains class already
+        if(contained){
+            //overwrite class
+            list.set(indexC, asgmt);
+        }
+        else{
+            //add class
+            list.add(asgmt);
+        }
         Intent i = new Intent(getApplicationContext(), MainActivity.class);
         startActivity(i);
     }
