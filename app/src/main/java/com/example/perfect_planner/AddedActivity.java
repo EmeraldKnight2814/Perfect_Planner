@@ -27,10 +27,8 @@ public class AddedActivity extends AppCompatActivity {
         EditText catClass = findViewById(R.id.categoryET);
         EditText dueDate = findViewById(R.id.dueDateET);
 
+
         Intent i = new Intent(getApplicationContext(), MainActivity.class);
-        i.putExtra("name", assignName.getText().toString());
-        i.putExtra("category", catClass.getText().toString());
-        i.putExtra("due date", dueDate.getText().toString());
         startActivity(i);
     }
 }
