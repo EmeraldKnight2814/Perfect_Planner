@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.EditText;
 
 import android.widget.Button;
+import android.widget.Spinner;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -24,7 +25,7 @@ public class AddedActivity extends AppCompatActivity {
     }
     public void createAssignment (View v){
         EditText assignName = findViewById(R.id.nameET);
-        EditText catClass = findViewById(R.id.categoryET);
+        Spinner catClass = findViewById(R.id.categoryET);
         EditText dueDate = findViewById(R.id.dueDateET);
 
 
