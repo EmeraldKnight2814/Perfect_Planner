@@ -15,6 +15,7 @@
         android:layout_marginBottom="290dp"
         android:backgroundTint="#02A512"
         android:fontFamily="@font/archivo_narrow_italic"
+        android:onClick="createAssignment"
         android:text="Save"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"

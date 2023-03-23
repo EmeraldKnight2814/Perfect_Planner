@@ -16,25 +16,21 @@ public class AddedActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.added_main);
         Button SaveBTN = findViewById(R.id.saveBTN);
-        SaveBTN.setOnClickListener(view ->{
-            Intent i = new Intent(getApplicationContext(), MainActivity.class);
-            startActivity(i);
-        });
         Button CancelBTN = findViewById(R.id.cancelBTN);
         SaveBTN.setOnClickListener(view ->{
             Intent i = new Intent(getApplicationContext(), MainActivity.class);
             startActivity(i);
         });
     }
+    public void createAssignment (View v){
+        EditText assignName = findViewById(R.id.nameET);
+        EditText catClass = findViewById(R.id.categoryET);
+        EditText dueDate = findViewById(R.id.dueDateET);
 
-    public class addActivity {
-        public void createAssignment (View v){
-            EditText assignName = findViewById(R.id.nameET);
-            EditText catClass = findViewById(R.id.categoryET);
-            EditText dueDate = findViewById(R.id.dueDateET);
-
-
-        }
+        Intent i = new Intent(getApplicationContext(), MainActivity.class);
+        i.putExtra("name", assignName.getText().toString());
+        i.putExtra("category", catClass.getText().toString());
+        i.putExtra("due date", dueDate.getText().toString());
+        startActivity(i);
     }
-
 }
