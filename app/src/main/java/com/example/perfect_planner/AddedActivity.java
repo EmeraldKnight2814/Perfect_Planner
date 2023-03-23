@@ -20,7 +20,7 @@ public class AddedActivity extends AppCompatActivity {
         setContentView(R.layout.added_main);
         Button SaveBTN = findViewById(R.id.saveBTN);
         Button CancelBTN = findViewById(R.id.cancelBTN);
-        SaveBTN.setOnClickListener(view ->{
+        CancelBTN.setOnClickListener(view ->{
             Intent i = new Intent(getApplicationContext(), MainActivity.class);
             startActivity(i);
         });
