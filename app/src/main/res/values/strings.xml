@@ -7,4 +7,12 @@
         <item>Literature</item>
         <item>SocialStudies</item>
     </string-array>
+
+    <string-array name="classFilter">
+        <item>Science</item>
+        <item>Math</item>
+        <item>History</item>
+        <item>Literature</item>
+        <item>SocialStudies</item>
+    </string-array>
 </resources>

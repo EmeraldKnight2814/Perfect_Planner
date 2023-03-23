@@ -30,7 +30,7 @@ public class AddedActivity extends AppCompatActivity {
         Spinner catClass = findViewById(R.id.categoryET);
         EditText dueDate = findViewById(R.id.dueDateET);
 
-        Model.Asgmt asgmt = new Model.Asgmt(assignName.getText().toString(), dueDate.getText().toString(), catClass.getText().toString());
+        Model.Asgmt asgmt = new Model.Asgmt(assignName.getText().toString(), dueDate.getText().toString(), catClass.getSelectedItem().toString());
         ArrayList<Model.Asgmt> list = Model.getModel().getAsgmtList();
 
         boolean contained = false;
