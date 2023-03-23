@@ -30,7 +30,7 @@ public class AddedActivity extends AppCompatActivity {
         Spinner catClass = findViewById(R.id.categoryET);
         EditText dueDate = findViewById(R.id.dueDateET);
 
-        Model.Asgmt asgmt = new Model.Asgmt(assignName.getText().toString(), dueDate.getText().toString(), catClass.getSelectedItem().toString());
+        Model.Asgmt asgmnt = new Model.Asgmt(assignName.getText().toString(), dueDate.getText().toString(), catClass.getSelectedItem().toString());
         ArrayList<Model.Asgmt> list = Model.getModel().getAsgmtList();
 
         boolean contained = false;
@@ -45,11 +45,11 @@ public class AddedActivity extends AppCompatActivity {
         // If array list contains class already
         if(contained){
             //overwrite class
-            list.set(indexC, asgmt);
+            list.set(indexC, asgmnt);
         }
         else{
             //add class
-            list.add(asgmt);
+            list.add(asgmnt);
         }
         Intent i = new Intent(getApplicationContext(), MainActivity.class);
         startActivity(i);
