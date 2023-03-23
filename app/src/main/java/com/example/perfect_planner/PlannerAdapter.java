@@ -32,6 +32,7 @@ public class PlannerAdapter extends RecyclerView.Adapter<PlannerAdapter.PlannerV
         TextView assignTV = holder.itemView.findViewById(R.id.assignTV);
         TextView dueDateTV = holder.itemView.findViewById(R.id.dueDateTV);
         assignTV.setText(myModel.getAsgmtList().get(position).getAsgmt());
+        dueDateTV.setText(Model.getModel().getAsgmtList().get(position).getDate()+"");
 
     }
 
