@@ -50,6 +50,24 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void editButton(View v){
+        //get which assignment was clicked
+        String name = "tempString";
+        int classIndex = 0;
+        String date = "tempString";
+        int index = 0;
+
+        //pass data to added activity
+        Intent intent = new Intent(getApplicationContext(), AddedActivity.class);
+        intent.putExtra("name", name);
+        intent.putExtra("class", classIndex);
+        intent.putExtra("date", date);
+        intent.putExtra("index", index);
+
+        //launch added activity
+        startActivity(intent);
+    }
+
     public void instruction(View v){
         Toast.makeText(getApplicationContext(),"Our app the Perfect Planner seeks to keep you organized.\nThis app will provide a place to store your assignments, the due date for said assignments, the details for assignments, and a place to mark it as done!", Toast.LENGTH_LONG).show();
     }
