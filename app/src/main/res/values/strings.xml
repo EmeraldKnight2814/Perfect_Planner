@@ -14,6 +14,10 @@
     <string name="filter2">Filter</string>
     <string name="add_please">add please</string>
     <string name="app_instruction">App Instruction</string>
+    <string name="assignment">Assignment</string>
+    <string name="duedate">DueDate</string>
+    <string name="done">DONE!</string>
+    <string name="edit">EDIT</string>
     <string-array name="filters">
         <item>Science</item>
         <item>Math</item>
