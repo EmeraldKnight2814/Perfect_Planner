@@ -11,6 +11,8 @@ import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -37,9 +39,12 @@ public class MainActivity extends AppCompatActivity {
 
     public void editButton(View v){
         //get which assignment was clicked
-        String name = "tempString";
-        int classIndex = 0;
-        String date = "tempString";
+        ArrayList<Model.Asgmt> assignments = Model.getModel().getAsgmtList();
+        Spinner filters = findViewById(R.id.filter);
+        ArrayAdapter<CharSequence> adapter = (ArrayAdapter<CharSequence>) filters.getAdapter();
+        String name = assignments.get(0).getAsgmt();
+        int classIndex = adapter.getPosition(assignments.get(0).getCat());
+        String date = assignments.get(0).getDate();
         int index = 0;
 
         //pass data to added activity
