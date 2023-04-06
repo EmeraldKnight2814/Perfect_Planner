@@ -55,12 +55,11 @@ public class AddedActivity extends AppCompatActivity {
             edit = true;
             EditText assignName = findViewById(R.id.nameET);
             Spinner catClass = findViewById(R.id.categoryET);
-            EditText dueDate = findViewById(R.id.dueDateET);
 
             //set current text values to assignment we wish to edit
             assignName.setText(stats.getCharSequence("name"));
             catClass.setSelection(stats.getInt("class"));
-            dueDate.setText(stats.getCharSequence("date"));
+            dateTV.setText(stats.getCharSequence("date"));
             editIndex = stats.getInt("index");
         }
     }
