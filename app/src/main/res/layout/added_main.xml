@@ -20,8 +20,7 @@
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/cancelBTN"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/dueDateET" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/nameET"
@@ -47,33 +46,15 @@
         android:entries="@array/classFilter"
         android:minHeight="48dp"
         android:spinnerMode="dropdown"
-        app:layout_constraintBottom_toTopOf="@+id/dueDateET"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/nameET" />
 
-    <EditText
-        android:id="@+id/dueDateET"
-        android:layout_width="300dp"
-        android:layout_height="70dp"
-        android:layout_marginBottom="70dp"
-        android:ems="10"
-        android:hint="Due Date"
-        android:inputType="textPersonName"
-        android:minHeight="48dp"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/saveBTN"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/categoryET" />
-
     <Button
         android:id="@+id/cancelBTN"
         android:layout_width="120dp"
         android:layout_height="60dp"
-        android:layout_marginTop="78dp"
         android:layout_marginEnd="55dp"
         android:layout_marginBottom="294dp"
         android:backgroundTint="#A50202"
@@ -82,8 +63,7 @@
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/saveBTN"
-        app:layout_constraintTop_toBottomOf="@+id/dueDateET" />
+        app:layout_constraintStart_toEndOf="@+id/saveBTN" />
 
     <TextView
         android:id="@+id/textView"
@@ -132,4 +112,34 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <Button
+        android:id="@+id/datePickerBTN"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_marginStart="141dp"
+        android:layout_marginTop="321dp"
+        android:layout_marginEnd="142dp"
+        android:layout_marginBottom="362dp"
+        android:text="Pick a date"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/dateTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="191dp"
+        android:layout_marginTop="26dp"
+        android:layout_marginEnd="191dp"
+        android:layout_marginBottom="26dp"
+        android:text="Date"
+        android:textSize="17sp"
+        app:layout_constraintBottom_toTopOf="@+id/datePickerBTN"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/categoryET" />
 </androidx.constraintlayout.widget.ConstraintLayout>
