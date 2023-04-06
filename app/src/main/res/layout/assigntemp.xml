@@ -59,7 +59,7 @@
         android:layout_marginBottom="30dp"
         android:backgroundTint="#02A512"
         android:fontFamily="@font/archivo_narrow_italic"
-        android:onClick="addPleaseButton"
+        android:onClick="editButton"
         android:text="EDIT"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

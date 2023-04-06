@@ -17,7 +17,8 @@ import java.util.ArrayList;
 import java.util.Calendar;
 
 public class AddedActivity extends AppCompatActivity {
-
+    private boolean edit = false;
+    private int editIndex = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,6 +49,20 @@ public class AddedActivity extends AppCompatActivity {
             Intent i = new Intent(getApplicationContext(), MainActivity.class);
             startActivity(i);
         });
+        // if EDIT was clicked
+        Bundle stats = getIntent().getExtras();
+        if(stats != null){
+            edit = true;
+            EditText assignName = findViewById(R.id.nameET);
+            Spinner catClass = findViewById(R.id.categoryET);
+            EditText dueDate = findViewById(R.id.dueDateET);
+
+            //set current text values to assignment we wish to edit
+            assignName.setText(stats.getCharSequence("name"));
+            catClass.setSelection(stats.getInt("class"));
+            dueDate.setText(stats.getCharSequence("date"));
+            editIndex = stats.getInt("index");
+        }
     }
     public void createAssignment (View v){
         EditText assignName = findViewById(R.id.nameET);
@@ -57,19 +72,10 @@ public class AddedActivity extends AppCompatActivity {
         Model.Asgmt asgmnt = new Model.Asgmt(assignName.getText().toString(), dateTV.getText().toString(), catClass.getSelectedItem().toString());
         ArrayList<Model.Asgmt> list = Model.getModel().getAsgmtList();
 
-        boolean contained = false;
-        int indexC = 0;
-        for(int i = 0; i < list.size(); i++){
-            if(assignName.getText().toString() == list.get(i).getAsgmt()){
-                contained = true;
-                indexC = i;
-                break;
-            }
-        }
         // If array list contains class already
-        if(contained){
+        if(edit){
             //overwrite class
-            list.set(indexC, asgmnt);
+            list.set(editIndex, asgmnt);
         }
         else{
             //add class
