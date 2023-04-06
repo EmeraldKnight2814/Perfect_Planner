@@ -1,5 +1,15 @@
 <resources>
     <string name="app_name">Perfect_Planner</string>
+    <string name="save">Save</string>
+    <string name="cancel">Cancel</string>
+    <string name="category_class">Category/Class</string>
+    <string name="assignment_name">Assignment Name</string>
+    <string name="_1_enter_the_assignment_name_in_the_first_box">1. Enter the assignment name in the first box</string>
+    <string name="_2_enter_in_the_class_or_category_that_the_assignment_or_task_applies_to_in_the_second_box">2. Enter in the class or category that the assignment or task applies to in the second box</string>
+    <string name="_3_enter_the_due_date_in_the_third_box">3. Enter the due date in the third box</string>
+    <string name="pick_a_date">Pick a date</string>
+    <string name="_4_when_you_re_done_press_the_save_button_to_erase_all_changes_and_go_back_to_the_main_screen_press_cancel">4. When you\'re done, press the save button. To erase all changes and go back to the main screen, press cancel</string>
+    <string name="date">Date</string>
     <string-array name="filters">
         <item>Science</item>
         <item>Math</item>
