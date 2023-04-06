@@ -37,10 +37,13 @@ public class PlannerAdapter extends RecyclerView.Adapter<PlannerAdapter.PlannerV
 
     }
 
-
     @Override
     public int getItemCount() {
         return myModel.getAsgmtList().size();
     }
 
+    public void removeItem(int position) {
+        myModel.getAsgmtList().remove(position);
+        notifyItemRemoved(position);
+    }
 }

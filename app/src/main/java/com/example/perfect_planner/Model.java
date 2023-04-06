@@ -20,7 +20,7 @@ public class Model {
     public ArrayList<Asgmt> getAsgmtList() {
         return asgmtList;
     }
-    
+
     public static class Asgmt {
         private String asgmt;
         private String cat;
