@@ -1,18 +1,42 @@
 <resources>
     <string name="app_name">Perfect_Planner</string>
     <string-array name="filters">
-        <item>Science</item>
-        <item>Math</item>
+        <item>N/A</item>
+        <item>Art</item>
+        <item>Biology</item>
+        <item>Chemistry</item>
+        <item>Composition</item>
+        <item>Economics</item>
+        <item>Geography</item>
         <item>History</item>
         <item>Literature</item>
+        <item>Mathematics</item>
+        <item>Music</item>
+        <item>Physics</item>
+        <item>Psychology</item>
+        <item>Science</item>
         <item>SocialStudies</item>
+        <item>Sport</item>
+        <item>Theater</item>
     </string-array>
 
     <string-array name="classFilter">
-        <item>Science</item>
-        <item>Math</item>
+        <item>N/A</item>
+        <item>Art</item>
+        <item>Biology</item>
+        <item>Chemistry</item>
+        <item>Composition</item>
+        <item>Economics</item>
+        <item>Geography</item>
         <item>History</item>
         <item>Literature</item>
+        <item>Mathematics</item>
+        <item>Music</item>
+        <item>Physics</item>
+        <item>Psychology</item>
+        <item>Science</item>
         <item>SocialStudies</item>
+        <item>Sport</item>
+        <item>Theater</item>
     </string-array>
 </resources>
