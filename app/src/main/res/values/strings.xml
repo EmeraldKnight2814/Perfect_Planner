@@ -10,6 +10,10 @@
     <string name="pick_a_date">Pick a date</string>
     <string name="_4_when_you_re_done_press_the_save_button_to_erase_all_changes_and_go_back_to_the_main_screen_press_cancel">4. When you\'re done, press the save button. To erase all changes and go back to the main screen, press cancel</string>
     <string name="date">Date</string>
+    <string name="filter">Filter</string>
+    <string name="filter2">Filter</string>
+    <string name="add_please">add please</string>
+    <string name="app_instruction">App Instruction</string>
     <string-array name="filters">
         <item>Science</item>
         <item>Math</item>
