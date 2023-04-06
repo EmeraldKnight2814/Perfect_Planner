@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FDB4E8"
-    android:contentDescription="Filter"
+    android:contentDescription="@string/filter"
     tools:context=".MainActivity">
 
     <Spinner
@@ -15,7 +15,7 @@
         android:layout_marginStart="50dp"
         android:layout_marginTop="100dp"
         android:layout_marginEnd="50dp"
-        android:contentDescription="Filter"
+        android:contentDescription="@string/filter2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/add"
         app:layout_constraintTop_toTopOf="parent"
@@ -31,7 +31,8 @@
         android:backgroundTint="#02A512"
         android:fontFamily="@font/archivo_narrow_italic"
         android:onClick="addPleaseButton"
-        android:text="add please"
+        android:text="@string/add_please"
+        android:textColor="#212121"
         app:layout_constraintEnd_toStartOf="@+id/filter"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -56,13 +57,15 @@
         android:backgroundTint="#0D6C16"
         android:fontFamily="@font/archivo_narrow_italic"
         android:onClick="instruction"
-        android:text="App Instruction"
-        android:textSize="10sp"
+        android:text="@string/app_instruction"
+        android:textColor="#FFCDD2"
+        android:textSize="11sp"
         app:layout_constraintBottom_toTopOf="@+id/filter"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.04"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.100000024" />
+        app:layout_constraintVertical_bias="0.100000024"
+        tools:ignore="TextContrastCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

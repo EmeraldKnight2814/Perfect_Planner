@@ -14,7 +14,7 @@
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="50dp"
         android:fontFamily="@font/archivo_narrow_italic"
-        android:text="Assignment"
+        android:text="@string/assignment"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/dueDateTV"
         app:layout_constraintStart_toStartOf="parent"
@@ -29,7 +29,7 @@
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="50dp"
         android:fontFamily="@font/archivo_narrow_italic"
-        android:text="DueDate"
+        android:text="@string/duedate"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/checkBox2"
         app:layout_constraintStart_toEndOf="@+id/assignTV"
@@ -43,7 +43,7 @@
         android:layout_marginTop="30dp"
         android:layout_marginEnd="15dp"
         android:layout_marginBottom="30dp"
-        android:text="DONE!"
+        android:text="@string/done"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/edit"
         app:layout_constraintStart_toEndOf="@+id/dueDateTV"
@@ -60,10 +60,12 @@
         android:backgroundTint="#02A512"
         android:fontFamily="@font/archivo_narrow_italic"
         android:onClick="editButton"
-        android:text="EDIT"
+        android:text="@string/edit"
+        android:textColor="#212121"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/checkBox2"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TextContrastCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
