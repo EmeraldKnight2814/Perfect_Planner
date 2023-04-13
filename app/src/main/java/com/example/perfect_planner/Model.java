@@ -52,4 +52,7 @@ public class Model {
         asgmtList.clear();
     }
 
+    public void removeItem(int position) {
+        asgmtList.remove(position);
+    }
 }

@@ -13,6 +13,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -61,6 +62,14 @@ public class MainActivity extends AppCompatActivity {
 
         //launch added activity
         startActivity(intent);
+    }
+
+    public void removeButton(View v){
+        RecyclerView plannerRV = findViewById(R.id.assignRV);
+        View view = plannerRV.findChildViewUnder(v.getX(), v.getY());
+        RecyclerView.ViewHolder holder = plannerRV.getChildViewHolder(view);
+        int position = holder.getAdapterPosition();
+        Model.getModel().removeItem(position);
     }
 
     public void instruction(View v){
