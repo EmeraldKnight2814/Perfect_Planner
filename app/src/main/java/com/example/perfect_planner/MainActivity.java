@@ -11,6 +11,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -64,13 +66,13 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    /*
     public void removeButton(View v){
         RecyclerView plannerRV = findViewById(R.id.assignRV);
-        View view = plannerRV.findChildViewUnder(v.getX(), v.getY());
-        RecyclerView.ViewHolder holder = plannerRV.getChildViewHolder(view);
-        int position = holder.getAdapterPosition();
         Model.getModel().removeItem(position);
     }
+     */
+
 
     public void instruction(View v){
         Toast.makeText(getApplicationContext(),"Our app the Perfect Planner seeks to keep you organized.\nThis app will provide a place to store your assignments, the due date for said assignments, the details for assignments, and a place to mark it as done!", Toast.LENGTH_LONG).show();
