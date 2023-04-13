@@ -28,6 +28,7 @@
         android:layout_width="300dp"
         android:layout_height="70dp"
         android:layout_marginTop="106dp"
+        android:autofillHints=""
         android:ems="10"
         android:hint="@string/assignment_name"
         android:inputType="textPersonName"
@@ -38,8 +39,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:autofillHints="" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Spinner
         android:id="@+id/categoryET"
@@ -126,9 +126,11 @@
         android:layout_height="48dp"
         android:layout_marginStart="141dp"
         android:layout_marginTop="321dp"
+        android:layout_marginEnd="142dp"
         android:layout_marginBottom="362dp"
         android:text="@string/pick_a_date"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
