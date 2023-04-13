@@ -128,6 +128,7 @@
         android:layout_marginTop="321dp"
         android:layout_marginEnd="142dp"
         android:layout_marginBottom="362dp"
+        android:backgroundTint="#3F51B5"
         android:text="@string/pick_a_date"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
