@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -36,6 +37,30 @@ public class MainActivity extends AppCompatActivity {
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.filters, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_item);
         filters.setAdapter(adapter);
+
+        SharedPreferences sh = getSharedPreferences("SharedPref", MODE_PRIVATE);
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        SharedPreferences sharedPreferences = getSharedPreferences("SharedPref", MODE_PRIVATE);
+        SharedPreferences.Editor myedit = sharedPreferences.edit();
+        int count = Model.getModel().getAsgmtList().size();
+
+        for (int i = 0; i < count; i++) {
+            ArrayList<Model.Asgmt> assignments = Model.getModel().getAsgmtList();
+            Spinner filters = findViewById(R.id.filter);
+            ArrayAdapter<CharSequence> adapter = (ArrayAdapter<CharSequence>) filters.getAdapter();
+            String name = assignments.get(i).getAsgmt();
+            int classIndex = adapter.getPosition(assignments.get(i).getCat());
+            String date = assignments.get(i).getDate();
+            int index = i;
+            myedit.putString("name", name);
+            myedit.putInt("class", classIndex);
+            myedit.putString("date", date);
+            myedit.putInt("index", index);
+        }
     }
 
     public void addPleaseButton (View v){
