@@ -98,8 +98,12 @@ public class MainActivity extends AppCompatActivity {
     }
      */
 
-
     public void instruction(View v){
         Toast.makeText(getApplicationContext(),"Our app the Perfect Planner seeks to keep you organized.\nThis app will provide a place to store your assignments, the due date for said assignments, the details for assignments, and a place to mark it as done!", Toast.LENGTH_LONG).show();
+    }
+
+    public void recycle(View v){
+        Intent recycle = new Intent(getApplicationContext(), recently_deleted.class);
+        startActivity(recycle);
     }
 }
