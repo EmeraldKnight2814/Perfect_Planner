@@ -56,7 +56,7 @@
         android:layout_height="48dp"
         android:backgroundTint="#0D6C16"
         android:fontFamily="@font/archivo_narrow_italic"
-        android:onClick="instruction"
+        android:onClick="instructionButton"
         android:text="@string/app_instruction"
         android:textColor="#FFCDD2"
         android:textSize="11sp"
