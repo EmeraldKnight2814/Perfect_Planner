@@ -76,6 +76,8 @@
         android:layout_marginTop="25dp"
         android:layout_marginEnd="25dp"
         android:layout_marginBottom="25dp"
+        android:contentDescription="See recently deleted"
+        android:onClick="recycle"
         app:layout_constraintBottom_toTopOf="@+id/filter"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/instructionBTN"

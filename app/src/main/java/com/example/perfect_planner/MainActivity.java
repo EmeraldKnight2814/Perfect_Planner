@@ -103,5 +103,9 @@ public class MainActivity extends AppCompatActivity {
     }
      */
 
+    public void recycle(View v){
+        Intent recycle = new Intent(getApplicationContext(), recently_deleted.class);
+        startActivity(recycle);
+    }
 
 }
