@@ -85,6 +85,11 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void instructionButton (View v){
+        Intent intent = new Intent(getApplicationContext(), InstructionActivity.class);
+        startActivity(intent);
+    }
+
     public void editButton(View v){
         //get which assignment was clicked
         ArrayList<Model.Asgmt> assignments = Model.getModel().getAsgmtList();
@@ -113,8 +118,9 @@ public class MainActivity extends AppCompatActivity {
     }
      */
 
-
-    public void instruction(View v){
-        Toast.makeText(getApplicationContext(),"Our app the Perfect Planner seeks to keep you organized.\nThis app will provide a place to store your assignments, the due date for said assignments, the details for assignments, and a place to mark it as done!", Toast.LENGTH_LONG).show();
+    public void recycle(View v){
+        Intent recycle = new Intent(getApplicationContext(), recently_deleted.class);
+        startActivity(recycle);
     }
+
 }
