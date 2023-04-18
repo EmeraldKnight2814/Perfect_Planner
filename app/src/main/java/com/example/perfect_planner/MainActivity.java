@@ -39,8 +39,19 @@ public class MainActivity extends AppCompatActivity {
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.filters, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_item);
         filters.setAdapter(adapter);
+    }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
         SharedPreferences sh = getSharedPreferences("SharedPref", MODE_PRIVATE);
+        int j = sh.getInt("NUMBEROFITERATIONS", 0);
+        for (int i = 0; i < j; i++) {
+            String assigment = sh.getString("name" + String.valueOf(i), "");
+            String date = sh.getString("date" + String.valueOf(i), "");
+            String classIndex = sh.getString("class" + String.valueOf(i), "");
+            Model.Asgmt asgmnt = new Model.Asgmt(assigment, date, classIndex);
+        }
     }
 
     @Override
@@ -49,20 +60,24 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences sharedPreferences = getSharedPreferences("SharedPref", MODE_PRIVATE);
         SharedPreferences.Editor myedit = sharedPreferences.edit();
         int count = Model.getModel().getAsgmtList().size();
-
+        ArrayList<Model.Asgmt> assignments = Model.getModel().getAsgmtList();
+        Spinner filters = findViewById(R.id.filter);
+        ArrayAdapter<CharSequence> adapter = (ArrayAdapter<CharSequence>) filters.getAdapter();
+        int j = 0;
         for (int i = 0; i < count; i++) {
-            ArrayList<Model.Asgmt> assignments = Model.getModel().getAsgmtList();
-            Spinner filters = findViewById(R.id.filter);
-            ArrayAdapter<CharSequence> adapter = (ArrayAdapter<CharSequence>) filters.getAdapter();
+            j = i;
             String name = assignments.get(i).getAsgmt();
-            int classIndex = adapter.getPosition(assignments.get(i).getCat());
+            String classIndex =assignments.get(i).getCat();
             String date = assignments.get(i).getDate();
             int index = i;
-            myedit.putString("name", name);
-            myedit.putInt("class", classIndex);
-            myedit.putString("date", date);
-            myedit.putInt("index", index);
+            myedit.putString("name" + String.valueOf(i), name);
+            myedit.putString("class" + String.valueOf(i), classIndex);
+            myedit.putString("date" + String.valueOf(i), date);
+            myedit.putInt("index" + String.valueOf(i), index);
         }
+
+        myedit.putInt("NUMBEROFITERATIONS", j);
+        myedit.commit();
     }
 
     public void addPleaseButton (View v){
