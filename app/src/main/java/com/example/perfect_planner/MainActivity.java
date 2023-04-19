@@ -34,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         try {
             PlannerAdapter plannerServer = new PlannerAdapter();
             RecyclerView plannerRV = findViewById(R.id.assignRV);
@@ -108,6 +109,7 @@ public class MainActivity extends AppCompatActivity {
         } catch (Exception e) {
             Toast.makeText(getApplicationContext(), "Something went wrong!", Toast.LENGTH_LONG).show();
         }
+
         ArrayList<Model.Asgmt> data = Model.getModel().getAsgmtList();
         Log.d("MyApp", "Saving " + data.size() + " items to file...");
         Log.d("MyApp", "Saving data to file: " + getFilesDir().getAbsolutePath() + "/data.ser");
