@@ -9,6 +9,8 @@ Planner allows the user:
 * To store an assignment's information and subject area
 * A place to check off when the assignment is complete
 
+Besides being used as a planner, it can also be used as a generalized planner!
+
 Did we mention it is free, too?
 
 Hardware-Software compatibility information:
@@ -28,3 +30,7 @@ button that says "Add Please"
 5. When you are ready to add the assignment, press the Save button
 
 6. To cancel and erase your progress, press the red Cancel button
+
+7. To mark your assignment as done, press the checkbox next to the word Done!
+
+8. To delete an assignment from the main view, press the red X button
