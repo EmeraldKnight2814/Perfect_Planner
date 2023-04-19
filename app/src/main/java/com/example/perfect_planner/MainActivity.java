@@ -76,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
             }        } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
         }
-        PlannerAdapter adapter = new PlannerAdapter(savedData);
+        PlannerAdapter adapter = new PlannerAdapter(savedData, getApplicationContext());
         RecyclerView plannerRV = findViewById(R.id.assignRV);
         plannerRV.setAdapter(adapter);
     }
@@ -134,16 +134,16 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void editButton(View v){
+    public void editButton(int position){
         try {
             //get which assignment was clicked
             ArrayList<Model.Asgmt> assignments = Model.getModel().getAsgmtList();
             Spinner filters = findViewById(R.id.filter);
             ArrayAdapter<CharSequence> adapter = (ArrayAdapter<CharSequence>) filters.getAdapter();
-            String name = assignments.get(0).getAsgmt();
-            int classIndex = adapter.getPosition(assignments.get(0).getCat());
-            String date = assignments.get(0).getDate();
-            int index = 0;
+            String name = assignments.get(position).getAsgmt();
+            int classIndex = adapter.getPosition(assignments.get(position).getCat());
+            String date = assignments.get(position).getDate();
+            int index = position;
 
             //pass data to added activity
             Intent intent = new Intent(getApplicationContext(), AddedActivity.class);
