@@ -34,27 +34,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-<<<<<<< Updated upstream
-        
-        try {
-            PlannerAdapter plannerServer = new PlannerAdapter();
-            RecyclerView plannerRV = findViewById(R.id.assignRV);
-            plannerRV.setAdapter(plannerServer);
-            LinearLayoutManager manage = new LinearLayoutManager(this);
-            plannerRV.setLayoutManager(manage);
-        } catch (Exception e){
-            Toast.makeText(getApplicationContext(),"Something went wrong!", Toast.LENGTH_LONG).show();
-        }
-=======
-
-
         PlannerAdapter plannerServer = new PlannerAdapter();
         RecyclerView plannerRV = findViewById(R.id.assignRV);
         plannerRV.setAdapter(plannerServer);
         LinearLayoutManager manage = new LinearLayoutManager(this);
         plannerRV.setLayoutManager(manage);
-
->>>>>>> Stashed changes
         Spinner filters = findViewById(R.id.filter);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.filters, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_item);
@@ -88,32 +72,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onStop() {
         super.onStop();
-<<<<<<< Updated upstream
-        try {
-            SharedPreferences sharedPreferences = getSharedPreferences("SharedPref", MODE_PRIVATE);
-            SharedPreferences.Editor myedit = sharedPreferences.edit();
-            int count = Model.getModel().getAsgmtList().size();
-            ArrayList<Model.Asgmt> assignments = Model.getModel().getAsgmtList();
-            Spinner filters = findViewById(R.id.filter);
-            ArrayAdapter<CharSequence> adapter = (ArrayAdapter<CharSequence>) filters.getAdapter();
-            int j = 0;
-            for (int i = 0; i < count; i++) {
-                j = i;
-                String name = assignments.get(i).getAsgmt();
-                String classIndex = assignments.get(i).getCat();
-                String date = assignments.get(i).getDate();
-                int index = i;
-                myedit.putString("name" + String.valueOf(i), name);
-                myedit.putString("class" + String.valueOf(i), classIndex);
-                myedit.putString("date" + String.valueOf(i), date);
-                myedit.putInt("index" + String.valueOf(i), index);
-            }
-
-            myedit.putInt("NUMBEROFITERATIONS", j);
-            myedit.commit();
-        } catch (Exception e){
-            Toast.makeText(getApplicationContext(),"Something went wrong!", Toast.LENGTH_LONG).show();
-=======
         ArrayList<Model.Asgmt> data = Model.getModel().getAsgmtList();
         Log.d("MyApp", "Saving " + data.size() + " items to file...");
         Log.d("MyApp", "Saving data to file: " + getFilesDir().getAbsolutePath() + "/data.ser");
@@ -125,7 +83,6 @@ public class MainActivity extends AppCompatActivity {
             fos.close();
         }catch (IOException e) {
             e.printStackTrace();
->>>>>>> Stashed changes
         }
     }
 
