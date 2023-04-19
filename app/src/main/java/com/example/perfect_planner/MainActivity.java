@@ -34,8 +34,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-<<<<<<< Updated upstream
-        
         try {
             PlannerAdapter plannerServer = new PlannerAdapter();
             RecyclerView plannerRV = findViewById(R.id.assignRV);
@@ -45,8 +43,6 @@ public class MainActivity extends AppCompatActivity {
         } catch (Exception e){
             Toast.makeText(getApplicationContext(),"Something went wrong!", Toast.LENGTH_LONG).show();
         }
-=======
-
 
         PlannerAdapter plannerServer = new PlannerAdapter();
         RecyclerView plannerRV = findViewById(R.id.assignRV);
@@ -54,7 +50,6 @@ public class MainActivity extends AppCompatActivity {
         LinearLayoutManager manage = new LinearLayoutManager(this);
         plannerRV.setLayoutManager(manage);
 
->>>>>>> Stashed changes
         Spinner filters = findViewById(R.id.filter);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.filters, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_item);
@@ -88,7 +83,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onStop() {
         super.onStop();
-<<<<<<< Updated upstream
         try {
             SharedPreferences sharedPreferences = getSharedPreferences("SharedPref", MODE_PRIVATE);
             SharedPreferences.Editor myedit = sharedPreferences.edit();
@@ -111,9 +105,9 @@ public class MainActivity extends AppCompatActivity {
 
             myedit.putInt("NUMBEROFITERATIONS", j);
             myedit.commit();
-        } catch (Exception e){
-            Toast.makeText(getApplicationContext(),"Something went wrong!", Toast.LENGTH_LONG).show();
-=======
+        } catch (Exception e) {
+            Toast.makeText(getApplicationContext(), "Something went wrong!", Toast.LENGTH_LONG).show();
+        }
         ArrayList<Model.Asgmt> data = Model.getModel().getAsgmtList();
         Log.d("MyApp", "Saving " + data.size() + " items to file...");
         Log.d("MyApp", "Saving data to file: " + getFilesDir().getAbsolutePath() + "/data.ser");
@@ -125,7 +119,6 @@ public class MainActivity extends AppCompatActivity {
             fos.close();
         }catch (IOException e) {
             e.printStackTrace();
->>>>>>> Stashed changes
         }
     }
 
