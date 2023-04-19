@@ -16,7 +16,7 @@ import androidx.appcompat.app.AppCompatActivity;
             super.onCreate(savedInstanceState);
             setContentView(R.layout.instruction_main);
 
-            displayTV.setText("Our app the Perfect Planner seeks to keep you organized.\\nThis app will provide a place to store your assignments, the due date for said assignments, the details for assignments, and a place to mark it as done!");
+            //displayTV.setText("Our app the Perfect Planner seeks to keep you organized.\\nThis app will provide a place to store your assignments, the due date for said assignments, the details for assignments, and a place to mark it as done!");
 
         }
 
