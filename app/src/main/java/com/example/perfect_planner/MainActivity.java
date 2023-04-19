@@ -28,14 +28,17 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         
-        PlannerAdapter plannerServer = new PlannerAdapter();
-        RecyclerView plannerRV = findViewById(R.id.assignRV);
-        plannerRV.setAdapter(plannerServer);
-        LinearLayoutManager manage = new LinearLayoutManager(this);
-        plannerRV.setLayoutManager(manage);
-
+        try {
+            PlannerAdapter plannerServer = new PlannerAdapter();
+            RecyclerView plannerRV = findViewById(R.id.assignRV);
+            plannerRV.setAdapter(plannerServer);
+            LinearLayoutManager manage = new LinearLayoutManager(this);
+            plannerRV.setLayoutManager(manage);
+        } catch (Exception e){
+            e.printStackTrace();
+            // handle the error
+        }
         Spinner filters = findViewById(R.id.filter);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.filters, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_item);
@@ -58,27 +61,32 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onStop() {
         super.onStop();
-        SharedPreferences sharedPreferences = getSharedPreferences("SharedPref", MODE_PRIVATE);
-        SharedPreferences.Editor myedit = sharedPreferences.edit();
-        int count = Model.getModel().getAsgmtList().size();
-        ArrayList<Model.Asgmt> assignments = Model.getModel().getAsgmtList();
-        Spinner filters = findViewById(R.id.filter);
-        ArrayAdapter<CharSequence> adapter = (ArrayAdapter<CharSequence>) filters.getAdapter();
-        int j = 0;
-        for (int i = 0; i < count; i++) {
-            j = i;
-            String name = assignments.get(i).getAsgmt();
-            String classIndex =assignments.get(i).getCat();
-            String date = assignments.get(i).getDate();
-            int index = i;
-            myedit.putString("name" + String.valueOf(i), name);
-            myedit.putString("class" + String.valueOf(i), classIndex);
-            myedit.putString("date" + String.valueOf(i), date);
-            myedit.putInt("index" + String.valueOf(i), index);
-        }
+        try {
+            SharedPreferences sharedPreferences = getSharedPreferences("SharedPref", MODE_PRIVATE);
+            SharedPreferences.Editor myedit = sharedPreferences.edit();
+            int count = Model.getModel().getAsgmtList().size();
+            ArrayList<Model.Asgmt> assignments = Model.getModel().getAsgmtList();
+            Spinner filters = findViewById(R.id.filter);
+            ArrayAdapter<CharSequence> adapter = (ArrayAdapter<CharSequence>) filters.getAdapter();
+            int j = 0;
+            for (int i = 0; i < count; i++) {
+                j = i;
+                String name = assignments.get(i).getAsgmt();
+                String classIndex = assignments.get(i).getCat();
+                String date = assignments.get(i).getDate();
+                int index = i;
+                myedit.putString("name" + String.valueOf(i), name);
+                myedit.putString("class" + String.valueOf(i), classIndex);
+                myedit.putString("date" + String.valueOf(i), date);
+                myedit.putInt("index" + String.valueOf(i), index);
+            }
 
-        myedit.putInt("NUMBEROFITERATIONS", j);
-        myedit.commit();
+            myedit.putInt("NUMBEROFITERATIONS", j);
+            myedit.commit();
+        } catch (Exception e){
+            e.printStackTrace();
+            // handle the error
+        }
     }
 
     public void addPleaseButton (View v){
@@ -92,24 +100,29 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void editButton(View v){
-        //get which assignment was clicked
-        ArrayList<Model.Asgmt> assignments = Model.getModel().getAsgmtList();
-        Spinner filters = findViewById(R.id.filter);
-        ArrayAdapter<CharSequence> adapter = (ArrayAdapter<CharSequence>) filters.getAdapter();
-        String name = assignments.get(0).getAsgmt();
-        int classIndex = adapter.getPosition(assignments.get(0).getCat());
-        String date = assignments.get(0).getDate();
-        int index = 0;
+        try {
+            //get which assignment was clicked
+            ArrayList<Model.Asgmt> assignments = Model.getModel().getAsgmtList();
+            Spinner filters = findViewById(R.id.filter);
+            ArrayAdapter<CharSequence> adapter = (ArrayAdapter<CharSequence>) filters.getAdapter();
+            String name = assignments.get(0).getAsgmt();
+            int classIndex = adapter.getPosition(assignments.get(0).getCat());
+            String date = assignments.get(0).getDate();
+            int index = 0;
 
-        //pass data to added activity
-        Intent intent = new Intent(getApplicationContext(), AddedActivity.class);
-        intent.putExtra("name", name);
-        intent.putExtra("class", classIndex);
-        intent.putExtra("date", date);
-        intent.putExtra("index", index);
+            //pass data to added activity
+            Intent intent = new Intent(getApplicationContext(), AddedActivity.class);
+            intent.putExtra("name", name);
+            intent.putExtra("class", classIndex);
+            intent.putExtra("date", date);
+            intent.putExtra("index", index);
 
-        //launch added activity
-        startActivity(intent);
+            //launch added activity
+            startActivity(intent);
+        } catch (Exception e){
+            e.printStackTrace();
+            // handle the error
+        }
     }
 
     /*
