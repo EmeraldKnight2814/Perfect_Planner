@@ -10,6 +10,7 @@ import android.widget.EditText;
 import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -68,19 +69,24 @@ public class AddedActivity extends AppCompatActivity {
         Spinner catClass = findViewById(R.id.categoryET);
         TextView dateTV = findViewById(R.id.dateTV);
 
-        Model.Asgmt asgmnt = new Model.Asgmt(assignName.getText().toString(), dateTV.getText().toString(), catClass.getSelectedItem().toString());
-        ArrayList<Model.Asgmt> list = Model.getModel().getAsgmtList();
+        //Is this work?
+        if(assignName.getText().toString() == ""){
+            Toast.makeText(getApplicationContext(),"Oops! Please assign the assignment name", Toast.LENGTH_LONG).show();
+        }
+        else {
+            Model.Asgmt asgmnt = new Model.Asgmt(assignName.getText().toString(), dateTV.getText().toString(), catClass.getSelectedItem().toString());
+            ArrayList<Model.Asgmt> list = Model.getModel().getAsgmtList();
 
-        // If array list contains class already
-        if(edit){
-            //overwrite class
-            list.set(editIndex, asgmnt);
+            // If array list contains class already
+            if (edit) {
+                //overwrite class
+                list.set(editIndex, asgmnt);
+            } else {
+                //add class
+                list.add(asgmnt);
+            }
+            Intent i = new Intent(getApplicationContext(), MainActivity.class);
+            startActivity(i);
         }
-        else{
-            //add class
-            list.add(asgmnt);
-        }
-        Intent i = new Intent(getApplicationContext(), MainActivity.class);
-        startActivity(i);
     }
 }
