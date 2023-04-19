@@ -7,8 +7,15 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.ArrayList;
+
 public class PlannerAdapter extends RecyclerView.Adapter<PlannerAdapter.PlannerViewHolder> {
 
+    private ArrayList<Model.Asgmt> mData;
+
+    public PlannerAdapter(ArrayList<Model.Asgmt> data){
+        mData = data;
+    }
     public static class PlannerViewHolder extends RecyclerView.ViewHolder{
         public PlannerViewHolder(View v) {super(v);}
     }

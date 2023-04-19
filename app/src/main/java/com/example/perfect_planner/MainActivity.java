@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -20,6 +21,11 @@ import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
@@ -28,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+<<<<<<< Updated upstream
         
         try {
             PlannerAdapter plannerServer = new PlannerAdapter();
@@ -38,6 +45,16 @@ public class MainActivity extends AppCompatActivity {
         } catch (Exception e){
             Toast.makeText(getApplicationContext(),"Something went wrong!", Toast.LENGTH_LONG).show();
         }
+=======
+
+
+        PlannerAdapter plannerServer = new PlannerAdapter();
+        RecyclerView plannerRV = findViewById(R.id.assignRV);
+        plannerRV.setAdapter(plannerServer);
+        LinearLayoutManager manage = new LinearLayoutManager(this);
+        plannerRV.setLayoutManager(manage);
+
+>>>>>>> Stashed changes
         Spinner filters = findViewById(R.id.filter);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.filters, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_item);
@@ -47,19 +64,31 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        SharedPreferences sh = getSharedPreferences("SharedPref", MODE_PRIVATE);
-        int j = sh.getInt("NUMBEROFITERATIONS", 0);
-        for (int i = 0; i < j; i++) {
-            String assigment = sh.getString("name" + String.valueOf(i), "");
-            String date = sh.getString("date" + String.valueOf(i), "");
-            String classIndex = sh.getString("class" + String.valueOf(i), "");
-            Model.Asgmt asgmnt = new Model.Asgmt(assigment, date, classIndex);
+        ArrayList<Model.Asgmt> savedData = null;
+        Log.d("MyApp", "Looking for data file...");
+        try {
+            FileInputStream fis = openFileInput("data.ser");
+            ObjectInputStream ois = new ObjectInputStream(fis);
+            savedData = (ArrayList<Model.Asgmt>) ois.readObject();
+            ois.close();
+            fis.close();
+            Log.d("MyApp", "Loaded " + savedData.size() + " items from file...");
+            if (savedData != null && !savedData.isEmpty()) {
+                Log.d("MyApp", "First item: " + savedData.get(0).toString());
+            } else {
+                Log.d("MyApp", "No data loaded from file...");
+            }        } catch (IOException | ClassNotFoundException e) {
+            e.printStackTrace();
         }
+        PlannerAdapter adapter = new PlannerAdapter(savedData);
+        RecyclerView plannerRV = findViewById(R.id.assignRV);
+        plannerRV.setAdapter(adapter);
     }
 
     @Override
     protected void onStop() {
         super.onStop();
+<<<<<<< Updated upstream
         try {
             SharedPreferences sharedPreferences = getSharedPreferences("SharedPref", MODE_PRIVATE);
             SharedPreferences.Editor myedit = sharedPreferences.edit();
@@ -84,6 +113,19 @@ public class MainActivity extends AppCompatActivity {
             myedit.commit();
         } catch (Exception e){
             Toast.makeText(getApplicationContext(),"Something went wrong!", Toast.LENGTH_LONG).show();
+=======
+        ArrayList<Model.Asgmt> data = Model.getModel().getAsgmtList();
+        Log.d("MyApp", "Saving " + data.size() + " items to file...");
+        Log.d("MyApp", "Saving data to file: " + getFilesDir().getAbsolutePath() + "/data.ser");
+        try{
+            FileOutputStream fos = openFileOutput("data.ser", Context.MODE_PRIVATE);
+            ObjectOutputStream oos = new ObjectOutputStream(fos);
+            oos.writeObject(data);
+            oos.close();
+            fos.close();
+        }catch (IOException e) {
+            e.printStackTrace();
+>>>>>>> Stashed changes
         }
     }
 

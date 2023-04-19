@@ -1,8 +1,9 @@
 package com.example.perfect_planner;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Model {
+public class Model implements Serializable {
     private static Model theModel = null;
     private ArrayList<Asgmt> asgmtList;
 
