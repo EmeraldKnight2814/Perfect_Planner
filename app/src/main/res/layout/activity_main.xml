@@ -52,7 +52,7 @@
 
     <Button
         android:id="@+id/instructionBTN"
-        android:layout_width="92dp"
+        android:layout_width="105dp"
         android:layout_height="48dp"
         android:backgroundTint="#0D6C16"
         android:fontFamily="@font/archivo_narrow_italic"
