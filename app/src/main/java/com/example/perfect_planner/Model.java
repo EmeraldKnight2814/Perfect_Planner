@@ -49,14 +49,10 @@ public class Model {
     }
 
     public void clear() {
-        for(int i = 0; i < asgmtList.size(); i++){
-            DelModel.getModel().getAsgmtList().add(asgmtList.get(i));
-        }
         asgmtList.clear();
     }
 
     public void removeItem(int position) {
-        DelModel.getModel().getAsgmtList().add(asgmtList.get(position));
         asgmtList.remove(position);
     }
 
