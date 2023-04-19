@@ -28,7 +28,6 @@ public class PlannerAdapter extends RecyclerView.Adapter<PlannerAdapter.PlannerV
         private Context mContext;
         public PlannerViewHolder(View v, Context context) {
             super(v);
-            this.mContext = context;
             //set edit button on-click listener
             v.findViewById(R.id.edit).setOnClickListener(view ->{
                 if(mContext instanceof MainActivity){
