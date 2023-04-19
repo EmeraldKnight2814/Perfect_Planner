@@ -7,42 +7,36 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class PlannerAdapter extends RecyclerView.Adapter<PlannerAdapter.PlannerViewHolder> {
+public class DelAdapter extends RecyclerView.Adapter<DelAdapter.DelViewHolder> {
 
-    public static class PlannerViewHolder extends RecyclerView.ViewHolder{
-        public PlannerViewHolder(View v) {super(v);}
+    public static class DelViewHolder extends RecyclerView.ViewHolder{
+        public DelViewHolder(View v) {super(v);}
     }
 
-    public PlannerAdapter(){
+    public DelAdapter(){
         super();
     }
 
     @NonNull
     @Override
-    public PlannerViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public DelAdapter.DelViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.assigntemp, parent, false);
-        PlannerViewHolder th= new PlannerViewHolder(v);
+        DelAdapter.DelViewHolder th= new DelAdapter.DelViewHolder(v);
         return th;
     }
 
-    private Model myModel = Model.getModel();
+    private DelModel myModel = DelModel.getModel();
     @Override
-    public void onBindViewHolder(@NonNull PlannerViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull DelAdapter.DelViewHolder holder, int position) {
         TextView assignTV = holder.itemView.findViewById(R.id.assignTV);
         TextView dueDateTV = holder.itemView.findViewById(R.id.dueDateTV);
         assignTV.setText(myModel.getAsgmtList().get(position).getAsgmt());
-        dueDateTV.setText(Model.getModel().getAsgmtList().get(position).getDate()+"");
-
+        dueDateTV.setText(myModel.getModel().getAsgmtList().get(position).getDate()+"");
     }
 
     @Override
     public int getItemCount() {
         return myModel.getAsgmtList().size();
-    }
-
-    public void removeItem(int position) {
-        myModel.getAsgmtList().remove(position);
-        notifyItemRemoved(position);
     }
 }
