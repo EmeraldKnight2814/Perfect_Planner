@@ -36,8 +36,7 @@ public class MainActivity extends AppCompatActivity {
             LinearLayoutManager manage = new LinearLayoutManager(this);
             plannerRV.setLayoutManager(manage);
         } catch (Exception e){
-            e.printStackTrace();
-            // handle the error
+            Toast.makeText(getApplicationContext(),"Something went wrong!", Toast.LENGTH_LONG).show();
         }
         Spinner filters = findViewById(R.id.filter);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.filters, android.R.layout.simple_spinner_item);
@@ -84,8 +83,7 @@ public class MainActivity extends AppCompatActivity {
             myedit.putInt("NUMBEROFITERATIONS", j);
             myedit.commit();
         } catch (Exception e){
-            e.printStackTrace();
-            // handle the error
+            Toast.makeText(getApplicationContext(),"Something went wrong!", Toast.LENGTH_LONG).show();
         }
     }
 
@@ -120,8 +118,7 @@ public class MainActivity extends AppCompatActivity {
             //launch added activity
             startActivity(intent);
         } catch (Exception e){
-            e.printStackTrace();
-            // handle the error
+            Toast.makeText(getApplicationContext(),"Something went wrong!", Toast.LENGTH_LONG).show();
         }
     }
 

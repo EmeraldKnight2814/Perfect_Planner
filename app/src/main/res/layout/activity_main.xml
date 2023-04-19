@@ -52,14 +52,14 @@
 
     <Button
         android:id="@+id/instructionBTN"
-        android:layout_width="132dp"
+        android:layout_width="92dp"
         android:layout_height="48dp"
         android:backgroundTint="#0D6C16"
         android:fontFamily="@font/archivo_narrow_italic"
         android:onClick="instructionButton"
         android:text="@string/app_instruction"
         android:textColor="#FFCDD2"
-        android:textSize="11sp"
+        android:textSize="9sp"
         app:layout_constraintBottom_toTopOf="@+id/filter"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.04"
