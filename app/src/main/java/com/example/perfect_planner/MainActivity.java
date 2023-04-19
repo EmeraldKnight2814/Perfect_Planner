@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        
         PlannerAdapter plannerServer = new PlannerAdapter();
         RecyclerView plannerRV = findViewById(R.id.assignRV);
         plannerRV.setAdapter(plannerServer);
