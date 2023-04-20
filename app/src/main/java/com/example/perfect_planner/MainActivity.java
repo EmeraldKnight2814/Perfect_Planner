@@ -28,7 +28,7 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements MainButtons {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
             }        } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
         }
-        PlannerAdapter adapter = new PlannerAdapter(savedData, getApplicationContext());
+        PlannerAdapter adapter = new PlannerAdapter(savedData, getApplicationContext(), this);
         RecyclerView plannerRV = findViewById(R.id.assignRV);
         plannerRV.setAdapter(adapter);
     }
@@ -134,6 +134,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    @Override
     public void editButton(int position){
         try {
             //get which assignment was clicked
@@ -159,12 +160,13 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    /*
-    public void removeButton(View v){
+    @Override
+    public void removeButton(int position){
         RecyclerView plannerRV = findViewById(R.id.assignRV);
+        PlannerAdapter plannerServer = (PlannerAdapter)plannerRV.getAdapter();
         Model.getModel().removeItem(position);
+        plannerServer.notifyDataSetChanged();
     }
-     */
 
     public void recycle(View v){
         Intent recycle = new Intent(getApplicationContext(), recently_deleted.class);

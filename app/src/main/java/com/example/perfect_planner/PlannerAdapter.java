@@ -17,24 +17,31 @@ import java.util.ArrayList;
 
 public class PlannerAdapter extends RecyclerView.Adapter<PlannerAdapter.PlannerViewHolder> {
     private Context mContext;
+    private MainButtons buttons;
     private ArrayList<Model.Asgmt> mData;
 
-    public PlannerAdapter(ArrayList<Model.Asgmt> data, Context context){
+    public PlannerAdapter(ArrayList<Model.Asgmt> data, Context context, MainButtons buttonsIn){
         mData = data;
         this.mContext = context;
+        this.buttons = buttonsIn;
     }
     public static class PlannerViewHolder extends RecyclerView.ViewHolder{
         int position;
         private Context mContext;
-        public PlannerViewHolder(View v, Context context) {
+        private MainButtons buttons;
+        public PlannerViewHolder(View v, Context context, MainButtons buttonsIn) {
             super(v);
+            this.mContext = context;
+            this.buttons = buttonsIn;
             //set edit button on-click listener
             v.findViewById(R.id.edit).setOnClickListener(view ->{
-                if(mContext instanceof MainActivity){
-                    if(mContext instanceof MainActivity){
-                        ((MainActivity)mContext).editButton(position);
-                    }
-                }
+                System.out.println("Edit Clicked at position: " + position);
+                buttons.editButton(position);
+            });
+            //set remove button on-click listener
+            v.findViewById(R.id.remove).setOnClickListener(view ->{
+                System.out.println("Remove Clicked at position: " + position);
+                buttons.removeButton(position);
             });
         }
     }
@@ -48,7 +55,7 @@ public class PlannerAdapter extends RecyclerView.Adapter<PlannerAdapter.PlannerV
     public PlannerViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.assigntemp, parent, false);
-        PlannerViewHolder th= new PlannerViewHolder(v, mContext);
+        PlannerViewHolder th= new PlannerViewHolder(v, mContext, buttons);
         return th;
     }
 
