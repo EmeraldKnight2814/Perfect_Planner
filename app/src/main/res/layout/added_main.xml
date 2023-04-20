@@ -101,7 +101,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:fontFamily="@font/archivo_narrow_italic"
-        android:text="@string/_3_enter_the_due_date_in_the_third_box"
+        android:text="Choose the due date using the 3. Pick a Date button"
         android:textColor="#880E4F"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
