@@ -22,6 +22,10 @@ public class Model implements Serializable {
         return asgmtList;
     }
 
+    public void setAsgmtList(ArrayList<Asgmt> assignments) {
+    }
+
+
     public static class Asgmt {
         private String asgmt;
         private String cat;

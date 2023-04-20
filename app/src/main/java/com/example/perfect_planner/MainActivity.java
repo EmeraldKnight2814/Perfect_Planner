@@ -27,6 +27,9 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
+import java.util.Map;
+
+import org.json.*;
 
 public class MainActivity extends AppCompatActivity implements MainButtons {
 
@@ -48,6 +51,7 @@ public class MainActivity extends AppCompatActivity implements MainButtons {
         PlannerAdapter plannerServer = new PlannerAdapter();
         RecyclerView plannerRV = findViewById(R.id.assignRV);
         plannerRV.setAdapter(plannerServer);
+        plannerServer.notifyDataSetChanged();
         LinearLayoutManager manage = new LinearLayoutManager(this);
         plannerRV.setLayoutManager(manage);
 
@@ -55,12 +59,35 @@ public class MainActivity extends AppCompatActivity implements MainButtons {
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.filters, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_item);
         filters.setAdapter(adapter);
+        SharedPreferences sharedPreferences = getSharedPreferences("MyData", MODE_PRIVATE);
+        String jsonData = sharedPreferences.getString("Data", null);
+
+        if (jsonData != null) {
+            try {
+                JSONObject jsonObject = new JSONObject(jsonData);
+                JSONArray jsonArray = jsonObject.getJSONArray("assignments");
+                ArrayList<Model.Asgmt> assignments = new ArrayList<>();
+                for (int i = 0; i < jsonArray.length(); i++) {
+                    JSONObject assignmentObject = jsonArray.getJSONObject(i);
+                    String title = assignmentObject.getString("title");
+                    String description = assignmentObject.getString("cat");
+                    String dueDate = assignmentObject.getString("date");
+                    Model.Asgmt asgmt = new Model.Asgmt(title, description, dueDate);
+                    assignments.add(asgmt);
+                    Log.d("Loaded Data", jsonData);
+                }
+                Model.getModel().setAsgmtList(assignments);
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        /*ArrayList<Model.Asgmt> savedData = null;
+        /*plannerRV.setAdapter(adapter);
+        ArrayList<Model.Asgmt> savedData = null;
         Log.d("MyApp", "Looking for data file...");
         try {
             FileInputStream fis = openFileInput("data.ser");
@@ -84,6 +111,39 @@ public class MainActivity extends AppCompatActivity implements MainButtons {
     @Override
     protected void onStop() {
         super.onStop();
+        ArrayList<Model.Asgmt> assignments = Model.getModel().getAsgmtList();
+        JSONArray jsonArray = new JSONArray();
+        for (Model.Asgmt asgmt : assignments) {
+            JSONObject jsonObject = new JSONObject();
+            try {
+                jsonObject.put("title", asgmt.getAsgmt());
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+            try {
+                jsonObject.put("cat", asgmt.getCat());
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+            try {
+                jsonObject.put("date", asgmt.getDate());
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+            jsonArray.put(jsonObject);
+        }
+        String jsonData = null;
+        try {
+            jsonData = new JSONObject().put("assignments", jsonArray).toString();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        SharedPreferences sharedPreferences = getSharedPreferences("MyData", MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        Log.d("Saved Data", jsonData);
+        editor.putString("Data", jsonData);
+        editor.apply();
         /*try {
             SharedPreferences sharedPreferences = getSharedPreferences("SharedPref", MODE_PRIVATE);
             SharedPreferences.Editor myedit = sharedPreferences.edit();
