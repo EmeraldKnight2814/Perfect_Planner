@@ -51,7 +51,6 @@ public class MainActivity extends AppCompatActivity implements MainButtons {
         PlannerAdapter plannerServer = new PlannerAdapter();
         RecyclerView plannerRV = findViewById(R.id.assignRV);
         plannerRV.setAdapter(plannerServer);
-        plannerServer.notifyDataSetChanged();
         LinearLayoutManager manage = new LinearLayoutManager(this);
         plannerRV.setLayoutManager(manage);
 
