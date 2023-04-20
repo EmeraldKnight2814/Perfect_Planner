@@ -69,11 +69,6 @@ public class AddedActivity extends AppCompatActivity {
         Spinner catClass = findViewById(R.id.categoryET);
         TextView dateTV = findViewById(R.id.dateTV);
 
-        //Is this work?
-        if(assignName.getText().toString() == ""){
-            Toast.makeText(getApplicationContext(),"Oops! Please assign the assignment name", Toast.LENGTH_LONG).show();
-        }
-        else {
             Model.Asgmt asgmnt = new Model.Asgmt(assignName.getText().toString(), dateTV.getText().toString(), catClass.getSelectedItem().toString());
             ArrayList<Model.Asgmt> list = Model.getModel().getAsgmtList();
 
@@ -87,6 +82,6 @@ public class AddedActivity extends AppCompatActivity {
             }
             Intent i = new Intent(getApplicationContext(), MainActivity.class);
             startActivity(i);
-        }
+
     }
 }
