@@ -27,7 +27,7 @@
         android:id="@+id/nameET"
         android:layout_width="300dp"
         android:layout_height="70dp"
-        android:layout_marginTop="106dp"
+        android:layout_marginTop="30dp"
         android:autofillHints=""
         android:ems="10"
         android:hint="@string/assignment_name"
@@ -45,6 +45,7 @@
         android:id="@+id/categoryET"
         android:layout_width="300dp"
         android:layout_height="70dp"
+        android:layout_marginTop="5dp"
         android:contentDescription="@string/category_class"
         android:entries="@array/classFilter"
         android:minHeight="48dp"
@@ -123,31 +124,26 @@
     <Button
         android:id="@+id/datePickerBTN"
         android:layout_width="wrap_content"
-        android:layout_height="48dp"
-        android:layout_marginStart="141dp"
-        android:layout_marginTop="321dp"
-        android:layout_marginEnd="142dp"
-        android:layout_marginBottom="362dp"
-        android:backgroundTint="#3F51B5"
-        android:text="@string/pick_a_date"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:text="Pick a Date"
+        app:layout_constraintBottom_toTopOf="@+id/saveBTN"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/categoryET" />
 
     <TextView
         android:id="@+id/dateTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="26dp"
-        android:layout_marginBottom="26dp"
-        android:text="@string/date"
-        android:textColor="#880E4F"
-        android:textSize="17sp"
+        android:layout_marginTop="80dp"
+        android:layout_marginBottom="40dp"
+        android:text="Date"
         app:layout_constraintBottom_toTopOf="@+id/datePickerBTN"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/categoryET"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toBottomOf="@+id/categoryET" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
