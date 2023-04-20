@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity implements MainButtons {
     @Override
     protected void onResume() {
         super.onResume();
-        ArrayList<Model.Asgmt> savedData = null;
+        /*ArrayList<Model.Asgmt> savedData = null;
         Log.d("MyApp", "Looking for data file...");
         try {
             FileInputStream fis = openFileInput("data.ser");
@@ -78,13 +78,13 @@ public class MainActivity extends AppCompatActivity implements MainButtons {
         }
         PlannerAdapter adapter = new PlannerAdapter(savedData, getApplicationContext(), this);
         RecyclerView plannerRV = findViewById(R.id.assignRV);
-        plannerRV.setAdapter(adapter);
+        plannerRV.setAdapter(adapter);*/
     }
 
     @Override
     protected void onStop() {
         super.onStop();
-        try {
+        /*try {
             SharedPreferences sharedPreferences = getSharedPreferences("SharedPref", MODE_PRIVATE);
             SharedPreferences.Editor myedit = sharedPreferences.edit();
             int count = Model.getModel().getAsgmtList().size();
@@ -121,7 +121,7 @@ public class MainActivity extends AppCompatActivity implements MainButtons {
             fos.close();
         }catch (IOException e) {
             e.printStackTrace();
-        }
+        }*/
     }
 
     public void addPleaseButton (View v){
