@@ -85,7 +85,6 @@
         android:layout_marginStart="100dp"
         android:backgroundTint="#ECECEC"
         android:contentDescription="End the program"
-        android:onClick="endProgram"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.938"
