@@ -234,6 +234,7 @@ public class MainActivity extends AppCompatActivity implements MainButtons {
 
     public void endProgram(View v){
         finish();
+        System.exit(0);
     }
 
 }

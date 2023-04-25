@@ -9,14 +9,19 @@
         android:id="@+id/assignTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="25dp"
+        android:layout_marginStart="40dp"
         android:layout_marginTop="25dp"
         android:layout_marginEnd="100dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginBottom="15dp"
         android:fontFamily="@font/archivo_narrow_italic"
         android:text="@string/assignment"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/dueDateTV"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/checkBox2"
+        app:layout_constraintHorizontal_bias="0.484"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -24,14 +29,16 @@
         android:id="@+id/dueDateTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginStart="5dp"
         android:layout_marginEnd="100dp"
         android:layout_marginBottom="25dp"
         android:fontFamily="@font/archivo_narrow_italic"
         android:text="@string/duedate"
+        android:textColor="#000000"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/checkBox2"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/assignTV" />
 
@@ -45,9 +52,12 @@
         android:layout_marginBottom="25dp"
         android:text="@string/done"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/edit"
+        app:layout_constraintHorizontal_bias="0.694"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/edit"
@@ -63,9 +73,13 @@
         android:textColor="#212121"
         android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/remove"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/checkBox2"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
         tools:ignore="TextContrastCheck" />
 
     <Button
@@ -74,7 +88,7 @@
         android:layout_height="48dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="25dp"
-        android:layout_marginEnd="25dp"
+        android:layout_marginEnd="20dp"
         android:layout_marginBottom="25dp"
         android:backgroundTint="#DA2E2E"
         android:fontFamily="@font/archivo_narrow_italic"
@@ -83,8 +97,11 @@
         android:textSize="10sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/edit"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5"
         tools:ignore="TextContrastCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

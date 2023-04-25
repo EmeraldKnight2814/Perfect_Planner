@@ -27,7 +27,7 @@
         android:id="@+id/nameET"
         android:layout_width="300dp"
         android:layout_height="70dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="5dp"
         android:autofillHints=""
         android:ems="10"
         android:hint="@string/assignment_name"
@@ -35,25 +35,27 @@
         android:minHeight="48dp"
         android:textColorHint="#7E57C2"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/categoryET"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.110000014" />
 
     <Spinner
         android:id="@+id/categoryET"
         android:layout_width="300dp"
         android:layout_height="70dp"
-        android:layout_marginTop="5dp"
         android:contentDescription="@string/category_class"
         android:entries="@array/classFilter"
         android:minHeight="48dp"
         android:spinnerMode="dropdown"
+        app:layout_constraintBottom_toTopOf="@+id/dateTV"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nameET" />
+        app:layout_constraintTop_toBottomOf="@+id/nameET"
+        app:layout_constraintVertical_bias="0.36" />
 
     <Button
         android:id="@+id/cancelBTN"
@@ -73,7 +75,7 @@
         android:id="@+id/textView"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="60dp"
         android:fontFamily="@font/archivo_narrow_italic"
         android:text="@string/_1_enter_the_assignment_name_in_the_first_box"
         android:textColor="#880E4F"
@@ -137,8 +139,7 @@
         android:id="@+id/dateTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
-        android:layout_marginBottom="40dp"
+        android:layout_marginTop="30dp"
         android:text="Date"
         app:layout_constraintBottom_toTopOf="@+id/datePickerBTN"
         app:layout_constraintEnd_toEndOf="parent"
