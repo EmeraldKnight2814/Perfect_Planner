@@ -17,20 +17,11 @@ Hardware-Software compatibility information:
 This app is compatible with devices that run an SDK of 27 or higher. In other words, it will run on systems
 running Android Nougat (7.3.1) and higher.
 
-How to use this app:
-1. When you open the app for the first time, the "planner book" should be empty. To add a new assignment, press the 
-button that says "Add Please"
+Instructions for app use can be found all over the app. Just click the red "i" button on the main page
+to see more information. 
 
-2. In the first box, enter the name of your assignment in the first box
+Licensing: This app is open-source with attribution. An individual may make changes as they see fit, but must not,
+under any circumstance, release this app for profit.
 
-3. In the next box, select the subject from the list
-
-4. To choose a due date, press the Pick A Date button
-
-5. When you are ready to add the assignment, press the Save button
-
-6. To cancel and erase your progress, press the red Cancel button
-
-7. To mark your assignment as done, press the checkbox next to the word Done!
-
-8. To delete an assignment from the main view, press the red X button
+We hope you enjoy this app! 
+GitHub repo: https://github.com/TheMusicMan28/Perfect_Planner
