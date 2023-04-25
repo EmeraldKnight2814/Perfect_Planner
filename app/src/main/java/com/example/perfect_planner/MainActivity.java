@@ -56,27 +56,6 @@ public class MainActivity extends AppCompatActivity implements MainButtons {
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.filters, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_item);
         filters.setAdapter(adapter);
-        SharedPreferences sharedPreferences = getSharedPreferences("MyData", MODE_PRIVATE);
-        String jsonData = sharedPreferences.getString("Data", null);
-
-        if (jsonData != null) {
-            try {
-                JSONObject jsonObject = new JSONObject(jsonData);
-                JSONArray jsonArray = jsonObject.getJSONArray("assignments");
-                for (int i = 0; i < jsonArray.length(); i++) {
-                    JSONObject assignmentObject = jsonArray.getJSONObject(i);
-                    String title = assignmentObject.getString("title");
-                    String description = assignmentObject.getString("cat");
-                    String dueDate = assignmentObject.getString("date");
-                    Model.Asgmt asgmt = new Model.Asgmt(title, description, dueDate);
-                    Model.getModel().getAsgmtList().add(asgmt);
-                    Log.d("Loaded Data", jsonData);
-                }
-            } catch (JSONException e) {
-                Toast.makeText(getApplicationContext(),"Something went wrong!", Toast.LENGTH_LONG).show();
-                e.printStackTrace();
-            }
-        }
 
         // Exit button using Alert Dialog
         ImageButton exitButton = findViewById(R.id.endBTN);
