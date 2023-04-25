@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity implements MainButtons {
         setContentView(R.layout.activity_main);
 
         try {
-            PlannerAdapter plannerServer = new PlannerAdapter();
+            PlannerAdapter plannerServer = new PlannerAdapter(this, this);
             RecyclerView plannerRV = findViewById(R.id.assignRV);
             plannerRV.setAdapter(plannerServer);
             LinearLayoutManager manage = new LinearLayoutManager(this);
@@ -47,12 +47,6 @@ public class MainActivity extends AppCompatActivity implements MainButtons {
         } catch (Exception e){
             Toast.makeText(getApplicationContext(),"Something went wrong!", Toast.LENGTH_LONG).show();
         }
-
-        PlannerAdapter plannerServer = new PlannerAdapter();
-        RecyclerView plannerRV = findViewById(R.id.assignRV);
-        plannerRV.setAdapter(plannerServer);
-        LinearLayoutManager manage = new LinearLayoutManager(this);
-        plannerRV.setLayoutManager(manage);
 
         Spinner filters = findViewById(R.id.filter);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.filters, android.R.layout.simple_spinner_item);

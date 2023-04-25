@@ -18,10 +18,8 @@ import java.util.ArrayList;
 public class PlannerAdapter extends RecyclerView.Adapter<PlannerAdapter.PlannerViewHolder> {
     private Context mContext;
     private MainButtons buttons;
-    private ArrayList<Model.Asgmt> mData;
 
-    public PlannerAdapter(ArrayList<Model.Asgmt> data, Context context, MainButtons buttonsIn){
-        mData = data;
+    public PlannerAdapter(Context context, MainButtons buttonsIn){
         this.mContext = context;
         this.buttons = buttonsIn;
     }
