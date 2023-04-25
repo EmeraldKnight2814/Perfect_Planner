@@ -33,13 +33,19 @@ public class recently_deleted extends AppCompatActivity implements ReDelButtons 
 
     // Restore all the assignments in the trash can
     public void restoreAll(View v){
+        RecyclerView delRV = findViewById(R.id.deletedRV);
+        DelAdapter delServer = (DelAdapter)delRV.getAdapter();
         DelModel.getModel().restoreAll();
+        delServer.notifyDataSetChanged();
         Toast.makeText(getApplicationContext(),"Assignments restored", Toast.LENGTH_LONG).show();
     }
 
     // Clear all the assignments in the trash can
     public void clearAll(View v){
+        RecyclerView delRV = findViewById(R.id.deletedRV);
+        DelAdapter delServer = (DelAdapter)delRV.getAdapter();
         DelModel.getModel().clear();
+        delServer.notifyDataSetChanged();
         Toast.makeText(getApplicationContext(),"All assignments cleared", Toast.LENGTH_LONG).show();
     }
 
@@ -49,6 +55,7 @@ public class recently_deleted extends AppCompatActivity implements ReDelButtons 
         DelAdapter delServer = (DelAdapter)delRV.getAdapter();
         DelModel.getModel().restoreItem(index);
         delServer.notifyDataSetChanged();
+        Toast.makeText(getApplicationContext(),"Assignment restored", Toast.LENGTH_LONG).show();
     }
 
     @Override
@@ -57,6 +64,7 @@ public class recently_deleted extends AppCompatActivity implements ReDelButtons 
         DelAdapter delServer = (DelAdapter)delRV.getAdapter();
         DelModel.getModel().removeItem(index);
         delServer.notifyDataSetChanged();
+        Toast.makeText(getApplicationContext(),"Assignment deleted", Toast.LENGTH_LONG).show();
     }
 
 }
