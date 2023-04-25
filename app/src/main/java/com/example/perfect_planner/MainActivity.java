@@ -63,17 +63,15 @@ public class MainActivity extends AppCompatActivity implements MainButtons {
             try {
                 JSONObject jsonObject = new JSONObject(jsonData);
                 JSONArray jsonArray = jsonObject.getJSONArray("assignments");
-                ArrayList<Model.Asgmt> assignments = new ArrayList<>();
                 for (int i = 0; i < jsonArray.length(); i++) {
                     JSONObject assignmentObject = jsonArray.getJSONObject(i);
                     String title = assignmentObject.getString("title");
                     String description = assignmentObject.getString("cat");
                     String dueDate = assignmentObject.getString("date");
                     Model.Asgmt asgmt = new Model.Asgmt(title, description, dueDate);
-                    assignments.add(asgmt);
+                    Model.getModel().getAsgmtList().add(asgmt);
                     Log.d("Loaded Data", jsonData);
                 }
-                Model.getModel().setAsgmtList(assignments);
             } catch (JSONException e) {
                 Toast.makeText(getApplicationContext(),"Something went wrong!", Toast.LENGTH_LONG).show();
                 e.printStackTrace();
