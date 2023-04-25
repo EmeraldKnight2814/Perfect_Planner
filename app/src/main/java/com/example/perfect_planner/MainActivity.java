@@ -187,6 +187,7 @@ public class MainActivity extends AppCompatActivity implements MainButtons {
 
     // Method to add the new assignment
     public void addPleaseButton (View v){
+        finish();
         Intent intent = new Intent(getApplicationContext(), AddedActivity.class);
         startActivity(intent);
     }
@@ -221,6 +222,7 @@ public class MainActivity extends AppCompatActivity implements MainButtons {
 
     // Method to go to the instruction layout
     public void instructionButton (View v){
+        finish();
         Intent intent = new Intent(this, InstructionActivity.class);
         startActivity(intent);
     }
@@ -237,6 +239,7 @@ public class MainActivity extends AppCompatActivity implements MainButtons {
 
     // Method to go to the trash can
     public void recycle(View v){
+        finish();
         Intent recycle = new Intent(getApplicationContext(), recently_deleted.class);
         startActivity(recycle);
     }

@@ -27,6 +27,7 @@ public class recently_deleted extends AppCompatActivity implements ReDelButtons 
 
     // Return to the Main Activity
     public void returnToMain(View v){
+        finish();
         Intent i = new Intent(getApplicationContext(), MainActivity.class);
         startActivity(i);
     }
