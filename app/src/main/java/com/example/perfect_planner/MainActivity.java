@@ -225,11 +225,11 @@ public class MainActivity extends AppCompatActivity implements MainButtons {
         Intent recycle = new Intent(getApplicationContext(), recently_deleted.class);
         startActivity(recycle);
     }
-/*
+
     public void clearTask(View v){
         RecyclerView plannerRV = findViewById(R.id.assignRV);
         Model.getModel().clear();
         plannerRV.getAdapter().notifyDataSetChanged();
-    }*/
+    }
 
 }
