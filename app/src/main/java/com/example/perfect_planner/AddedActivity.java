@@ -47,6 +47,7 @@ public class AddedActivity extends AppCompatActivity {
             }
         });
         CancelBTN.setOnClickListener(view ->{
+            finish();
             Intent i = new Intent(getApplicationContext(), MainActivity.class);
             startActivity(i);
         });
@@ -80,8 +81,8 @@ public class AddedActivity extends AppCompatActivity {
             //add class
             list.add(asgmnt);
         }
+        finish();
         Intent i = new Intent(getApplicationContext(), MainActivity.class);
         startActivity(i);
-
     }
 }
