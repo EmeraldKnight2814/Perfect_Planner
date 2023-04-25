@@ -49,6 +49,7 @@ public class MainActivity extends AppCompatActivity implements MainButtons {
             plannerRV.setLayoutManager(manage);
         } catch (Exception e){
             Toast.makeText(getApplicationContext(),"Something went wrong!", Toast.LENGTH_LONG).show();
+            e.printStackTrace();
         }
 
         Spinner filters = findViewById(R.id.filter);
@@ -74,6 +75,7 @@ public class MainActivity extends AppCompatActivity implements MainButtons {
                 }
                 Model.getModel().setAsgmtList(assignments);
             } catch (JSONException e) {
+                Toast.makeText(getApplicationContext(),"Something went wrong!", Toast.LENGTH_LONG).show();
                 e.printStackTrace();
             }
         }
@@ -236,6 +238,7 @@ public class MainActivity extends AppCompatActivity implements MainButtons {
             startActivity(intent);
         } catch (Exception e){
             Toast.makeText(getApplicationContext(),"Something went wrong!", Toast.LENGTH_LONG).show();
+            e.printStackTrace();
         }
     }
 
