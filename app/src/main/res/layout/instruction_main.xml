@@ -20,7 +20,7 @@
         app:layout_constraintHorizontal_bias="0.562"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.742" />
+        app:layout_constraintVertical_bias="0.695" />
 
     <TextView
         android:id="@+id/exitButtonTV"
@@ -35,7 +35,7 @@
         app:layout_constraintHorizontal_bias="0.353"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.661" />
+        app:layout_constraintVertical_bias="0.615" />
 
     <TextView
         android:id="@+id/deleteButtonTV"
@@ -50,7 +50,7 @@
         app:layout_constraintHorizontal_bias="0.371"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.582" />
+        app:layout_constraintVertical_bias="0.529" />
 
     <TextView
         android:id="@+id/clearButtonTV"
@@ -64,21 +64,22 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.675"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.45" />
 
     <TextView
         android:id="@+id/instruction2"
         android:layout_width="366dp"
         android:layout_height="77dp"
         android:text="This app will provide a place to store your assignments, the due date for said assignments, the details for assignments, and a place to mark it as done!"
-        android:textSize="16sp"
+        android:textSize="14sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.511"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.336" />
+        app:layout_constraintVertical_bias="0.313" />
 
     <TextView
         android:id="@+id/headlineTV"
@@ -86,7 +87,7 @@
         android:layout_height="wrap_content"
         android:text="App Instruction:"
         android:textColor="#8F03A8"
-        android:textSize="28sp"
+        android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -107,10 +108,10 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.892"
+        app:layout_constraintHorizontal_bias="0.888"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.919"
+        app:layout_constraintVertical_bias="0.892"
         tools:ignore="TextContrastCheck" />
 
     <TextView
@@ -118,7 +119,7 @@
         android:layout_width="367dp"
         android:layout_height="54dp"
         android:text="Our app the Perfect Planner seeks to keep you organized."
-        android:textSize="16sp"
+        android:textSize="14sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -136,6 +137,7 @@
         app:layout_constraintHorizontal_bias="0.104"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.448"
         app:srcCompat="@android:drawable/ic_delete" />
 
     <ImageButton
@@ -148,7 +150,7 @@
         app:layout_constraintHorizontal_bias="0.104"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.586"
+        app:layout_constraintVertical_bias="0.533"
         app:srcCompat="@android:drawable/ic_menu_delete" />
 
     <ImageButton
@@ -161,7 +163,7 @@
         app:layout_constraintHorizontal_bias="0.094"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.671"
+        app:layout_constraintVertical_bias="0.616"
         app:srcCompat="@android:drawable/ic_lock_power_off" />
 
     <ImageButton
@@ -174,7 +176,7 @@
         app:layout_constraintHorizontal_bias="0.094"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.754"
+        app:layout_constraintVertical_bias="0.701"
         app:srcCompat="@android:drawable/ic_dialog_info" />
 
     <TextView
