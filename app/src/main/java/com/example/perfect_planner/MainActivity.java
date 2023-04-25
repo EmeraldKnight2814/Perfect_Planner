@@ -119,16 +119,19 @@ public class MainActivity extends AppCompatActivity implements MainButtons {
             try {
                 jsonObject.put("title", asgmt.getAsgmt());
             } catch (JSONException e) {
+                Log.d("ERROR ", e.getMessage());
                 e.printStackTrace();
             }
             try {
                 jsonObject.put("cat", asgmt.getCat());
             } catch (JSONException e) {
+                Log.d("ERROR ", e.getMessage());
                 e.printStackTrace();
             }
             try {
                 jsonObject.put("date", asgmt.getDate());
             } catch (JSONException e) {
+                Log.d("ERROR ", e.getMessage());
                 e.printStackTrace();
             }
             jsonArray.put(jsonObject);
@@ -137,6 +140,7 @@ public class MainActivity extends AppCompatActivity implements MainButtons {
         try {
             jsonData = new JSONObject().put("assignments", jsonArray).toString();
         } catch (JSONException e) {
+            Log.d("ERROR ", e.getMessage());
             e.printStackTrace();
         }
 
