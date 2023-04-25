@@ -17,5 +17,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
         public void returnButton (View v){
             finish();
+            Intent i = new Intent(getApplicationContext(), MainActivity.class);
+            startActivity(i);
         }
     }

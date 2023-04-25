@@ -102,7 +102,7 @@
         android:layout_height="63dp"
         android:backgroundTint="#0D6C16"
         android:fontFamily="@font/archivo_narrow_italic"
-        android:onClick="instructionButton"
+        android:onClick="returnButton"
         android:text="Go back"
         android:textColor="#FFCDD2"
         android:textSize="20sp"
