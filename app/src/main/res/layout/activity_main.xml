@@ -50,37 +50,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/filter" />
 
-    <Button
-        android:id="@+id/instructionBTN"
-        android:layout_width="105dp"
-        android:layout_height="48dp"
-        android:backgroundTint="#0D6C16"
-        android:fontFamily="@font/archivo_narrow_italic"
-        android:onClick="instructionButton"
-        android:text="@string/app_instruction"
-        android:textColor="#FFCDD2"
-        android:textSize="9sp"
-        app:layout_constraintBottom_toTopOf="@+id/filter"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.052"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.307"
-        tools:ignore="TextContrastCheck" />
-
     <ImageButton
         android:id="@+id/deleteButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="145dp"
-        android:layout_marginEnd="25dp"
+        android:layout_marginEnd="88dp"
         android:layout_marginBottom="25dp"
         android:contentDescription="See recently deleted"
         android:onClick="recycle"
         app:layout_constraintBottom_toTopOf="@+id/filter"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/instructionBTN"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.541"
         app:srcCompat="@android:drawable/ic_menu_delete" />
@@ -104,14 +83,30 @@
         android:layout_width="52dp"
         android:layout_height="52dp"
         android:layout_marginStart="100dp"
+        android:backgroundTint="#ECECEC"
         android:contentDescription="End the program"
         android:onClick="endProgram"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.937"
+        app:layout_constraintHorizontal_bias="0.938"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.019"
         app:srcCompat="@android:drawable/ic_lock_power_off" />
+
+    <ImageButton
+        android:id="@+id/informationBTN"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#AE2929"
+        android:contentDescription="End the program"
+        android:onClick="instructionButton"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.045"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.019"
+        app:srcCompat="@android:drawable/ic_dialog_info" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
