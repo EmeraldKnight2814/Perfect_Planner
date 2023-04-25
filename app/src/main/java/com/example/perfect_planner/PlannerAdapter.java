@@ -35,12 +35,18 @@ public class PlannerAdapter extends RecyclerView.Adapter<PlannerAdapter.PlannerV
             this.buttons = buttonsIn;
             //set edit button on-click listener
             v.findViewById(R.id.edit).setOnClickListener(view ->{
+                position = getAdapterPosition();
+                System.out.println();
                 System.out.println("Edit Clicked at position: " + position);
+                System.out.println();
                 buttons.editButton(position);
             });
             //set remove button on-click listener
             v.findViewById(R.id.remove).setOnClickListener(view ->{
+                position = getAdapterPosition();
+                System.out.println();
                 System.out.println("Remove Clicked at position: " + position);
+                System.out.println();
                 buttons.removeButton(position);
             });
         }
