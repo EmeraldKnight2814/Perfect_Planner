@@ -232,4 +232,8 @@ public class MainActivity extends AppCompatActivity implements MainButtons {
         plannerRV.getAdapter().notifyDataSetChanged();
     }
 
+    public void endProgram(View v){
+        finish();
+    }
+
 }
