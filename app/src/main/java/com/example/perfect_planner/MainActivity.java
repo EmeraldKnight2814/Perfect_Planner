@@ -78,6 +78,7 @@ public class MainActivity extends AppCompatActivity implements MainButtons {
             }
         }
 
+        // Exit button using Alert Dialog
         ImageButton exitButton = findViewById(R.id.endBTN);
         exitButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -205,16 +206,13 @@ public class MainActivity extends AppCompatActivity implements MainButtons {
         }*/
     }
 
+    // Method to add the new assignment
     public void addPleaseButton (View v){
         Intent intent = new Intent(getApplicationContext(), AddedActivity.class);
         startActivity(intent);
     }
 
-    public void instructionButton (View v){
-        Intent intent = new Intent(this, InstructionActivity.class);
-        startActivity(intent);
-    }
-
+    // Method to edit information of the specific assignment
     @Override
     public void editButton(int position){
         try {
@@ -241,6 +239,13 @@ public class MainActivity extends AppCompatActivity implements MainButtons {
         }
     }
 
+    // Method to go to the instruction layout
+    public void instructionButton (View v){
+        Intent intent = new Intent(this, InstructionActivity.class);
+        startActivity(intent);
+    }
+
+    // Method to remove the assignment
     @Override
     public void removeButton(int position){
         RecyclerView plannerRV = findViewById(R.id.assignRV);
@@ -250,21 +255,18 @@ public class MainActivity extends AppCompatActivity implements MainButtons {
         Toast.makeText(getApplicationContext(),"Deleted successfully\nNow you can check it in [Trash can]", Toast.LENGTH_LONG).show();
     }
 
+    // Method to go to the trash can
     public void recycle(View v){
         Intent recycle = new Intent(getApplicationContext(), recently_deleted.class);
         startActivity(recycle);
     }
 
+    // Method to clear all assignments
     public void clearTask(View v){
         RecyclerView plannerRV = findViewById(R.id.assignRV);
         Model.getModel().clear();
         plannerRV.getAdapter().notifyDataSetChanged();
         Toast.makeText(getApplicationContext(),"All assignments cleared!", Toast.LENGTH_LONG).show();
-    }
-
-    public void endProgram(View v){
-        finish();
-        System.exit(0);
     }
 
 }

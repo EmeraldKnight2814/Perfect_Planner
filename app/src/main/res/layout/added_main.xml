@@ -40,7 +40,7 @@
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.110000014" />
+        app:layout_constraintVertical_bias="0.07999998" />
 
     <Spinner
         android:id="@+id/categoryET"
@@ -75,7 +75,7 @@
         android:id="@+id/textView"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="30dp"
         android:fontFamily="@font/archivo_narrow_italic"
         android:text="@string/_1_enter_the_assignment_name_in_the_first_box"
         android:textColor="#880E4F"

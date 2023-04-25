@@ -34,6 +34,7 @@ public class DelModel {
         asgmtList.remove(position);
     }
 
+    // Restore all the assignments in the trash can
     public void restoreAll(){
         for(int i = 0; i < asgmtList.size(); i++){
             Model.getModel().getAsgmtList().add(asgmtList.get(i));

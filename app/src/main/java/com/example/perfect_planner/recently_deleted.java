@@ -25,16 +25,19 @@ public class recently_deleted extends AppCompatActivity {
         delRV.setLayoutManager(manage);
     }
 
+    // Return to the Main Activity
     public void returnToMain(View v){
         Intent i = new Intent(getApplicationContext(), MainActivity.class);
         startActivity(i);
     }
 
+    // Restore all the assignments in the trash can
     public void restoreAll(View v){
         DelModel.getModel().restoreAll();
         Toast.makeText(getApplicationContext(),"Assignments restored", Toast.LENGTH_LONG).show();
     }
 
+    // Clear all the assignments in the trash can
     public void clearAll(View v){
         DelModel.getModel().clear();
         Toast.makeText(getApplicationContext(),"All assignments cleared", Toast.LENGTH_LONG).show();
