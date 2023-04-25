@@ -219,6 +219,7 @@ public class MainActivity extends AppCompatActivity implements MainButtons {
         PlannerAdapter plannerServer = (PlannerAdapter)plannerRV.getAdapter();
         Model.getModel().removeItem(position);
         plannerServer.notifyDataSetChanged();
+        Toast.makeText(getApplicationContext(),"Deleted successfully\nNow you can check it in [Trash can]", Toast.LENGTH_LONG).show();
     }
 
     public void recycle(View v){
@@ -230,6 +231,7 @@ public class MainActivity extends AppCompatActivity implements MainButtons {
         RecyclerView plannerRV = findViewById(R.id.assignRV);
         Model.getModel().clear();
         plannerRV.getAdapter().notifyDataSetChanged();
+        Toast.makeText(getApplicationContext(),"All assignments cleared!", Toast.LENGTH_LONG).show();
     }
 
     public void endProgram(View v){
