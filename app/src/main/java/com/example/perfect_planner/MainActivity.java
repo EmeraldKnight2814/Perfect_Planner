@@ -183,7 +183,7 @@ public class MainActivity extends AppCompatActivity implements MainButtons {
     }
 
     public void instructionButton (View v){
-        Intent intent = new Intent(getApplicationContext(), InstructionActivity.class);
+        Intent intent = new Intent(this, InstructionActivity.class);
         startActivity(intent);
     }
 
@@ -225,5 +225,11 @@ public class MainActivity extends AppCompatActivity implements MainButtons {
         Intent recycle = new Intent(getApplicationContext(), recently_deleted.class);
         startActivity(recycle);
     }
+/*
+    public void clearTask(View v){
+        RecyclerView plannerRV = findViewById(R.id.assignRV);
+        Model.getModel().clear();
+        plannerRV.getAdapter().notifyDataSetChanged();
+    }*/
 
 }
