@@ -45,12 +45,18 @@ public class recently_deleted extends AppCompatActivity implements ReDelButtons 
 
     @Override
     public void restore(int index){
+        RecyclerView delRV = findViewById(R.id.deletedRV);
+        DelAdapter delServer = (DelAdapter)delRV.getAdapter();
         DelModel.getModel().restoreItem(index);
+        delServer.notifyDataSetChanged();
     }
 
     @Override
     public void delete(int index){
+        RecyclerView delRV = findViewById(R.id.deletedRV);
+        DelAdapter delServer = (DelAdapter)delRV.getAdapter();
         DelModel.getModel().removeItem(index);
+        delServer.notifyDataSetChanged();
     }
 
 }
