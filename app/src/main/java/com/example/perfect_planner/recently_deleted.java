@@ -11,14 +11,14 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
-public class recently_deleted extends AppCompatActivity {
+public class recently_deleted extends AppCompatActivity implements ReDelButtons {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recently_deleted);
 
-        DelAdapter delServer = new DelAdapter();
+        DelAdapter delServer = new DelAdapter(this, this);
         RecyclerView delRV = findViewById(R.id.deletedRV);
         delRV.setAdapter(delServer);
         LinearLayoutManager manage = new LinearLayoutManager(this);
@@ -43,15 +43,14 @@ public class recently_deleted extends AppCompatActivity {
         Toast.makeText(getApplicationContext(),"All assignments cleared", Toast.LENGTH_LONG).show();
     }
 
-    /*
-    public void restore(View v){
-        int index = 0;
+    @Override
+    public void restore(int index){
         DelModel.getModel().restoreItem(index);
     }
 
-    public void delete(View v){
-        int index = 0;
+    @Override
+    public void delete(int index){
         DelModel.getModel().removeItem(index);
     }
-     */
+
 }
