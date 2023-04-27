@@ -54,6 +54,9 @@ public class Model implements Serializable {
     }
 
     public void clear() {
+        for(int i = 0; i < asgmtList.size(); i++){
+            DelModel.getModel().getAsgmtList().add(asgmtList.get(i));
+        }
         asgmtList.clear();
     }
 
