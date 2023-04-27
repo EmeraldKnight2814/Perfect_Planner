@@ -68,9 +68,10 @@ public class PlannerAdapter extends RecyclerView.Adapter<PlannerAdapter.PlannerV
     public void onBindViewHolder(@NonNull PlannerViewHolder holder, int position) {
         TextView assignTV = holder.itemView.findViewById(R.id.assignTV);
         TextView dueDateTV = holder.itemView.findViewById(R.id.dueDateTV);
+        TextView catTV = holder.itemView.findViewById(R.id.catTV);
         assignTV.setText(myModel.getAsgmtList().get(position).getAsgmt());
-        dueDateTV.setText(Model.getModel().getAsgmtList().get(position).getDate()+"");
-
+        dueDateTV.setText(myModel.getAsgmtList().get(position).getDate()+"");
+        catTV.setText(myModel.getAsgmtList().get(position).getCat());
     }
 
     @Override
