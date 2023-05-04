@@ -26,6 +26,7 @@ under any circumstance, release this app for profit.
 We hope you enjoy this app! 
 GitHub repo: https://github.com/TheMusicMan28/Perfect_Planner
 
+
 Completetion Status for Program
 * Modifiable Fields - completed
 * Selectable Dates - completed
