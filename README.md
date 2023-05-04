@@ -25,3 +25,17 @@ under any circumstance, release this app for profit.
 
 We hope you enjoy this app! 
 GitHub repo: https://github.com/TheMusicMan28/Perfect_Planner
+
+Completetion Status for Program
+  Modifiable Fields - completed
+  Selectable Dates - completed
+  Restore Feature - completed
+  Subject categories - completed
+  In-App Assistance - completed 
+  Recycler view - completed
+  Search function - Incomplete
+  Filters (Catagory, date) - incomplete
+  Stylish Background - incomplete
+  Exporting data to a file like CSV/SpreadSheet - Incomplete 
+  Widget on Homescreen - incomplete
+  Outside of app Notifications - incomplete
