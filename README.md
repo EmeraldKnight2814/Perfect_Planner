@@ -1,5 +1,5 @@
 Perfect Planner
-2023 By Anthony Jack, Daniel Crowley, Haebin Noh, and Owen Graham
+2023 By Anthony Jack, Emerald Crowley (Formerly Daniel Crowley), Haebin Noh, and Owen Graham
 
 About the App:
 This is a planner app that allows you to stay organized with a minimalistic environment. We know
@@ -24,7 +24,7 @@ Licensing: This app is open-source with attribution. An individual may make chan
 under any circumstance, release this app for profit.
 
 We hope you enjoy this app! 
-GitHub repo: https://github.com/TheMusicMan28/Perfect_Planner
+GitHub repo: https://github.com/EmeraldKnight2814/Perfect_Planner
 
 
 Completetion Status for Program
